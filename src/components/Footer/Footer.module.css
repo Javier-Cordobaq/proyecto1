@@ -1,0 +1,22 @@
+.container{
+    height:500px;
+    background-color: var(--color-amarillo);
+
+}
+.container img{
+    width: 50%;
+    display: block;
+    margin:auto;  
+    
+}
+
+@media (min-width: 480px) and (max-width: 768px){
+
+}
+
+
+@media (max-width: 480px) {
+    .container{
+        height: 300px;
+    }
+}

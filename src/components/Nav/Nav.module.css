@@ -1,0 +1,221 @@
+.contenedorSticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.contenedorGlobal {
+    display: flex;
+    justify-content: space-between;
+    height: 6rem;
+    min-width: 100%;
+    font-family: var(--fuente-titulos);
+    background-color: rgba(255, 255, 255, 0.904);
+}
+
+.contenedorLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    max-height: 100%;
+    margin-left: 2rem;
+    width: 20rem;
+    box-sizing: border-box;
+}
+
+.contenedorLogo img {
+    object-fit: cover;
+    width: 90%;
+}
+
+.contenedorDerecha {
+    display: flex;
+    margin-right: 2rem;
+}
+
+
+.botones {
+    color: var(--color-celeste);
+    height: 100%;
+    box-sizing: border-box;
+    width: 10rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.botones a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color-celeste);
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: 0.3s all ease-in;
+}
+
+.botones a:hover {
+    transform: scale(1.1);
+}
+
+.rutas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    color: var(--color-celeste);
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.rutas li {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+    border-right: 3px solid var(--color-celeste);
+    font-size: 20px;
+    font-weight: 800;
+    padding-right: 10px;
+    height: 1.5rem;
+    transition: 0.3s all ease-in-out;
+}
+
+.rutas li a {
+    transition: 0.3s all ease-in-out;
+    text-decoration: none;
+    color: var(--color-celeste);
+}
+
+.rutas li a:hover {
+    color: var(--color-azul);
+}
+
+.rutas li:hover {
+    border-right: 3px solid var(--color-azul);
+}
+
+.rutas li:last-child {
+    border-right: none;
+}
+
+/* Estilos checkbox */
+
+.modal {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .contenedorGlobal {
+        display: flex;
+        justify-content: space-between;
+        min-height: 6rem;
+        font-family: var(--fuente-titulos);
+        background-color: white;
+    }
+
+    .modal {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    .menuGlobal {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    /* Menu hamburguesa */
+
+    .filtros_cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 5rem;
+    }
+    
+    .input_filtros {
+        display: none;
+        position: absolute;
+    }
+
+    .filtros_cont span {
+        font-size: 30px;
+        color: var(--color-celeste);
+    }
+    
+    .input_filtros:checked + span {
+        color: var(--color-celeste)
+    }
+
+    .prueba {
+        height: 100%;
+        width: 100%;
+        background-color: var(--color-blanco);
+    }
+
+    .rutasResponsive {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    .rutasResponsive li {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        width: 100%;
+        height: 4rem;
+        padding: 0 0 0 1.5rem;
+        box-sizing: border-box;
+        transition: 0.3s all ease-in-out;
+    }
+
+    .rutasResponsive a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .rutasResponsive li:hover {
+        background-color: rgb(241, 241, 241);
+    }
+
+    /* Estilos logo  */
+
+    
+.LogoResponsive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    max-height: 100%;
+    margin-left: 1rem;
+    width: 15rem;
+    box-sizing: border-box;
+}
+
+.LogoResponsive img {
+    object-fit: cover;
+    width: 90%;
+}
+
+.contenedorLogo {
+        display: none;
+    }
+
+.contenedorDerecha {
+        display: none
+    }
+
+.botones {
+    display: none
+}
+
+}; 
