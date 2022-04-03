@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../../Imagenes/LogoRangers.png'
 import style from './ProductosTienda.module.css'
+import { Link } from 'react-router-dom'
 
 export default function ProductosTienda({productos, filtrar}){
 
@@ -13,6 +14,7 @@ export default function ProductosTienda({productos, filtrar}){
 
                 typeof productos !== 'string' ? productos?.map(snack => (
 
+                    <Link to='/'>
                     <div className={style.producto}>
                         <img className={style.img} src={snack.image} alt="Imagen del producto no encontrada"/>
                         <div className={style.comprar}>
@@ -27,6 +29,7 @@ export default function ProductosTienda({productos, filtrar}){
                         
 
                     </div>
+                    </Link>
                 ))
                 : 
                 <h1>
@@ -36,6 +39,7 @@ export default function ProductosTienda({productos, filtrar}){
                 
                 filtrar?.map(snack => (
 
+                <Link to='/'>
                     <div className={style.producto}>
                         <img className={style.img} src={snack.image} alt="Imagen del producto no encontrada"/>
                         <div className={style.comprar}>
@@ -44,12 +48,13 @@ export default function ProductosTienda({productos, filtrar}){
                                 <button>+<span class="material-icons-round">shopping_cart</span></button>
                             </div>
                             <div className={style.tablanutriocional}>
-                                        <p>Ver tabla nutricional + 1</p>
+                                <p>Ver tabla nutricional + 1</p>
                             </div>
                         </div>
                         
 
                     </div>
+                </Link>
                 ))
 
                 }     

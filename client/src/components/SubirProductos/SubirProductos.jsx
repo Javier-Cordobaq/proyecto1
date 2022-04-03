@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import { getTipos, postProducts, setMensaje } from '../../redux/actions'; 
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom'
 
 /* Imports Material UI */
 
@@ -188,7 +189,7 @@ const handleSumbit = (e) => {
 
                     <div className={styles.producto}>
                       <div className={`${state.image === '' ? styles.img : styles.imgSinfondo}`}>
-                        <img src={state.image} alt=""/>
+                        <img className={styles.prueba} src={state.image} alt=""/>
                       </div>
                         <div className={styles.comprar}>
                         <p>{state.type}</p>

@@ -74,15 +74,13 @@
 }
 
 .imgSinfondo {
+    position: relative;
     display: flex;
     justify-content: center;
     width: 50%;
     height: 50%;
     border-radius: 10px;
-}
-
-.producto .imgSinfondo img:hover {
-    opacity: 20%;
+    background-color: blue;
 }
 
 .imgSinfondo img {
