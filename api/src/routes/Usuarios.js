@@ -15,16 +15,14 @@ router.post('/', async (req, res) => {
 )
 
 router.get('/', async (req, res) => {
-    const allUsers = await Usuario.find()
+  const allUsers = await Usuario.find()
 
-    if (allUsers.length > 0) {
-        res.json(allUsers)
-    }
-    else {
-        res.json({ message: 'No hay usuarios' })
-    }
+  if (allUsers.length > 0) {
+    res.json(allUsers)
+  } else {
+    res.json({ message: 'No hay usuarios' })
+  }
 })
-
 
 // exportar
 module.exports = router

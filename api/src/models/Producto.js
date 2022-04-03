@@ -6,7 +6,11 @@ const Productos = new Schema({
     type: Number,
     default: 0
   },
-  type: String,
+  // tipo de producto
+  type: {
+    type: Schema.Types.ObjectId,
+    ref: 'Tipos'
+  },
   date: {
     type: Date,
     default: Date.now
