@@ -5,6 +5,9 @@ const uri = 'mongodb+srv://alvarovega:z6O8Wcqzx93gB0iL@proyecto1.ou6cw.mongodb.n
 
 const db = mongoose.connection
 
+const express = require('express');
+const app = express();
+
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 server.listen(3001, () => {
   console.log('Servidor corriendo en el puerto 3001')
@@ -16,3 +19,9 @@ db.on('error', err => {
   console.log('Error de conexión', err)
 }
 )
+
+app.use(express.static(__dirname + "/frontend/build"));
+//Luego le decimos a express que sirva todo eso desde el home
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "/frontend/build", "index.html"))
+});

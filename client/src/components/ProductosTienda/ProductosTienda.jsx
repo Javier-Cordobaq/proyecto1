@@ -16,8 +16,12 @@ export default function ProductosTienda({productos, filtrar}){
 
                     <Link to='/'>
                     <div className={style.producto}>
-                        <img className={style.img} src={snack.image} alt="Imagen del producto no encontrada"/>
+                        <div className={style.img}>
+                            <img src={snack.image} alt="Imagen del producto no encontrada"/>
+                            <button className={style.mor}>Seleccionar opciones</button>
+                        </div>
                         <div className={style.comprar}>
+                            <p>{snack.price}</p>
                             <div className={style.botton}>
                                 <p>{snack.name}</p>
                                 <button>+<span class="material-icons-round">shopping_cart</span></button>
@@ -25,6 +29,7 @@ export default function ProductosTienda({productos, filtrar}){
                             <div className={style.tablanutriocional}>
                                         <p>Ver tabla nutricional + 1</p>
                             </div>
+                            <p>{snack.type.name}</p>
                         </div>
                         
 
@@ -39,22 +44,27 @@ export default function ProductosTienda({productos, filtrar}){
                 
                 filtrar?.map(snack => (
 
-                <Link to='/'>
+                    <Link to='/'>
                     <div className={style.producto}>
-                        <img className={style.img} src={snack.image} alt="Imagen del producto no encontrada"/>
+                        <div className={style.img}>
+                            <img src={snack.image} alt="Imagen del producto no encontrada"/>
+                            <button className={style.mor}>Seleccionar opciones</button>
+                        </div>
                         <div className={style.comprar}>
+                            <p>{snack.price}</p>
                             <div className={style.botton}>
                                 <p>{snack.name}</p>
                                 <button>+<span class="material-icons-round">shopping_cart</span></button>
                             </div>
                             <div className={style.tablanutriocional}>
-                                <p>Ver tabla nutricional + 1</p>
+                                        <p>Ver tabla nutricional + 1</p>
                             </div>
+                            <p>{snack.type.name}</p>
                         </div>
                         
 
                     </div>
-                </Link>
+                    </Link>
                 ))
 
                 }     

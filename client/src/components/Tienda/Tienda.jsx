@@ -33,8 +33,8 @@ const Tienda = () => {
   const [slider, setSlider] = useState(0)
   const [filtrar, setFiltrar] = useState([])
 
-  function valuetext(value) {
-    return setSlider(value);
+  const valuetext = (value) => {
+    setSlider(value)
   }
 
   const valoresAceptados = /^[0-9]+$/;
@@ -58,9 +58,9 @@ const Tienda = () => {
     }
     setState(nombre)
       setFiltrar(productos.filter((c) => {
-        return ( c?.name?.toLocaleLowerCase().includes(state.toLocaleLowerCase()) || c?.type.name.toLocaleLowerCase().includes(state.toLocaleLowerCase()) 
+        return ( c?.name?.toLocaleLowerCase().includes(state.toLocaleLowerCase()) || c?.type.name.toLocaleLowerCase().includes(state.toLocaleLowerCase())
         )
-      }))
+    }))
   }
 
   return (

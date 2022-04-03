@@ -104,7 +104,7 @@ const handleSumbit = (e) => {
 
             <h2>Información del producto</h2>
 
-                <div>
+                <div className={styles.prueba}>
                     <TextField
                     error={errores.error}
                     id="outlined-error-helper-text"
@@ -118,7 +118,7 @@ const handleSumbit = (e) => {
                     />
                 </div>
 
-                <div>
+                <div className={styles.prueba}>
                     <TextField
                     error={errores.erro}
                     id="outlined-error-helper-text"
@@ -133,37 +133,41 @@ const handleSumbit = (e) => {
                     />
                 </div>
 
-                <div className={styles.contSelect}>
-                            
-                  <FormControl variant="outlined" className={styles.formControl}>
-                  <InputLabel id="demo-simple-select-outlined-label">Tipo</InputLabel>
-                  <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    value={state.type} 
-                    name='type'
-                    onChange={handleChange}
-                    label="Tipo"
-                    fullWidth
-                  >
-                    <MenuItem value="">
-                      <em>Tipo</em>
-                    </MenuItem>
-                    {
-                      tipos.length !== 0 ? tipos?.map(c => (
-                            
-                      <MenuItem key={c._id} value={c._id}>{c.name}</MenuItem>
-                      ))
-                      :
-                      null
-                                              
-                    }
-                  </Select>
-                  </FormControl>
+                <div className={styles.prueba}>
+
+                  <div className={styles.contSelect}>
+                              
+                    <FormControl variant="outlined" className={styles.formControl}>
+                    <InputLabel id="demo-simple-select-outlined-label">Tipo</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-outlined-label"
+                      id="demo-simple-select-outlined"
+                      value={state.type} 
+                      name='type'
+                      onChange={handleChange}
+                      label="Tipo"
+                      fullWidth
+                    >
+                      <MenuItem value="">
+                        <em>Tipo</em>
+                      </MenuItem>
+                      {
+                        tipos.length !== 0 ? tipos?.map(c => (
+                              
+                        <MenuItem key={c._id} value={c._id}>{c.name}</MenuItem>
+                        ))
+                        :
+                        null
+                                                
+                      }
+                    </Select>
+                    </FormControl>
+
+                  </div>
 
                 </div>
 
-                 <div>
+                 <div className={styles.prueba}>
                     <Button
                       variant="contained"
                       component="label"
