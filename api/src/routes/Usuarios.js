@@ -2,15 +2,23 @@ const express = require('express')
 const router = express.Router()
 const Usuario = require('../models/Usuario')
 router.post('/', async (req, res) => {
-  const { name, email } = req.body
-  const usuario = new Usuario({ name, email })
-  usuario.save()
-    .then(data => {
-      res.json(data)
-    })
-    .catch(err => {
-      res.json(err)
-    })
+  try {
+    const { name, email } = req.body
+    if (name === '' || email === '') {
+      res.json({ message: 'Todos los campos son obligatorios' })
+    } else {
+      const usuario = new Usuario({ name, email })
+      usuario.save()
+        .then(data => {
+          res.json(data)
+        })
+        .catch(err => {
+          res.json(err)
+        })
+    }
+  } catch (err) {
+    res.json(err)
+  }
 }
 )
 

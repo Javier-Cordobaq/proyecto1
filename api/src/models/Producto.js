@@ -11,6 +11,7 @@ const Productos = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Tipos'
   },
+  image: String,
   date: {
     type: Date,
     default: Date.now
