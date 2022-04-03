@@ -1,5 +1,5 @@
 .seccionAmarilla {
-    height: 25rem;
+    height: 30rem;
     width: 100%;
     display: flex; 
     flex-direction: column;
@@ -10,7 +10,7 @@
 .amarillaContenido{
     width: 70%;
     background-color: var(--color-amarillo);
-    height: 25rem;
+    height: 100%;
     border-radius: 15px;
 }
 .amarillaContenido h1{

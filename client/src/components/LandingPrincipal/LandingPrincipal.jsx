@@ -7,6 +7,8 @@ import SeccionVideo from '../seccionVideo/SeccionVideo';
 import SeccionProductos from '../SeccionProductos/SeccionProductos';
 import style from '../LandingPrincipal/LandingPrincipal.module.css'
 import Footer from '../Footer/Footer'
+import Suscribirse from '../Suscribirse/Suscribirse';
+
 const LandingPrincipal = () => {
   return (
     <div className={style.globalCont}>
@@ -16,6 +18,7 @@ const LandingPrincipal = () => {
       <div><SeccionImagenes/></div>
       <div><SeccionVideo/></div>
       <div><SeccionProductos/></div>
+      <div><Suscribirse/></div>
       <div><Footer/></div>
     </div>
   )
