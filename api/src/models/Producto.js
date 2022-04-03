@@ -1,18 +1,16 @@
 const { Schema, model } = require('mongoose')
 
-const Compras = new Schema({
-  idCompra: {
-    type: Number
-  },
+const Productos = new Schema({
   name: String,
   price: {
     type: Number,
     default: 0
   },
-  max: String,
+  type: String,
   date: {
-    type: Number
+    type: Date,
+    default: Date.now
   }
 }
 )
-module.exports = model('Compras', Compras)
+module.exports = model('Productos', Productos)

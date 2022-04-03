@@ -1,12 +1,12 @@
 const { Schema, model } = require('mongoose')
 
-const Ventas = new Schema({
+const Usuario = new Schema({
   name: String,
   email: String,
   date: {
     type: Date,
-    default: Date
+    default: Date.now
   }
 }
 )
-module.exports = model('Ventas', Ventas)
+module.exports = model('Usuario', Usuario)
