@@ -9,29 +9,28 @@ router.post('/', async (req, res) => {
 
     if (name === '' || type === '') {
       res.json({ message: 'Todos los campos son obligatorios' })
-    }else{
-        const valdar = await Productos.findOne({ name })
-        if (valdar) {
-            res.json({ message: 'El producto ya existe' })
-            } else {
-                const tipo = await Tipos.findById(type)
-                const usuario = new Productos({
-                  name,
-                  type: tipo._id,
-                  price,
-                  image
-                })
-                usuario.save()
-                  .then(data => {
-                    res.json('Producto guardado')
-                  })
-                  .catch(err => {
-                    res.json(err)
-                  })
-
-                }
+    } else {
+      const valdar = await Productos.findOne({ name })
+      if (valdar) {
+        res.send( message: 'El producto ya existe' )
+      } else {
+        const tipo = await Tipos.findById(type)
+        const usuario = new Productos({
+          name,
+          type: tipo._id,
+          price,
+          image
+        })
+        usuario.save()
+          .then(data => {
+            res.send('Producto guardado')
+          })
+          .catch(err => {
+            res.send(err)
+          })
+      }
     }
-} catch (err) {
+  } catch (err) {
     res.json(err)
   }
 })
