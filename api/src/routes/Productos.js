@@ -5,7 +5,7 @@ const Tipos = require('../models/Tipos')
 
 router.post('/', async (req, res) => {
   try {
-    const { name, type, price, image } = req.body
+    const { name, type, price, image, nutricional } = req.body
 
     if (name === '' || type === '') {
       res.json({ message: 'Todos los campos son obligatorios' })
@@ -19,7 +19,8 @@ router.post('/', async (req, res) => {
           name,
           type: tipo._id,
           price,
-          image
+          image,
+          nutricional
         })
         usuario.save()
           .then(data => {
@@ -41,7 +42,7 @@ router.get('/', async (req, res) => {
   if (allProducts.length > 0) {
     res.json(allProducts)
   } else {
-    res.json({ message: 'No hay productos' })
+    res.send('No hay productos')
   }
 })
 

@@ -1,0 +1,85 @@
+.globalContainer {
+    height: 50vh;
+    width: 100%;
+    background-color: var(--color-rosa);
+    display: flex;
+    color: var(--color-blanco);
+}
+
+.contTexto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+}
+
+.textos {
+    box-sizing: border-box;
+    padding-left: 10%;
+}
+
+.textos h1 {
+    font-size: 6vh;
+}
+
+.textos p {
+    font-size: 4.7vh;
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.inputs input {
+    height: 60px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 1rem;
+    font-size: 4vh;
+    width: 30%;
+    box-sizing: border-box;
+    padding-left: 1.5rem;
+    
+}
+
+.inputs input::placeholder {
+    display: flex;
+    color: black;
+}
+
+.paquetes {
+    height: 100%;
+    width: 43%;
+    background-image: url('../../Imagenes/paquetesfooter.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.botonHeader{
+    width: 40%;
+    border: none;
+    height: 60px;
+    border-radius: 5px;
+    font-size:25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    background-color: var(--color-blanco);
+}
+
+.botonHeader span{
+    font-size:45px;
+    margin-right: 20%;
+    transition: 0.5s all ease-in-out;
+}
+
+.botonHeader:hover span{
+    transform: translateX(50px);
+}

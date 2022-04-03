@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Nav from '../Nav/Nav'
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
@@ -13,45 +13,25 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import { useDispatch, useSelector } from 'react-redux'
+import { getProducts } from '../../redux/actions';
 
 const Tienda = () => {
-  
-  const arraySnacks = [
-    {
-      img: snack1,
-      nombre: 'Spicy Cheese',
-    },
-    {
-      img: snack2,
-      nombre: 'Sea Salt',
-    },
-    {
-      img: snack3,
-      nombre: 'Sweet & Salty',
-    },
-  ]
 
-  const rings = [
-    {
-      img: snack1,
-      nombre: 'White Cheddar',
-    },
-    {
-      img: snack2,
-      nombre: 'Caramel Churro',
-    },
-    {
-      img: snack3,
-      nombre: 'Sour cream & Onion',
-    }
-  ]
+  const dispatch = useDispatch();
 
-  const [state, setState] = useState()
+  useEffect(() => {
+    dispatch(getProducts())
+  }, [])
+
+  const productos = useSelector(state => state.productos)
+  console.log(productos, 'Estos son los producspts')
+
+  const [state, setState] = useState('')
   const [error, setError] = useState(false)
   const [mensajeerror, setMensajeError] = useState('')
   const [slider, setSlider] = useState(0)
-
-  const arrayPro = arraySnacks.concat(rings)
+  const [filtrar, setFiltrar] = useState([])
 
   function valuetext(value) {
     return setSlider(value);
@@ -77,6 +57,10 @@ const Tienda = () => {
       setError(false)
     }
     setState(nombre)
+      setFiltrar(productos.filter((c) => {
+        return ( c?.name?.toLocaleLowerCase().includes(state.toLocaleLowerCase()) || c?.type.name.toLocaleLowerCase().includes(state.toLocaleLowerCase()) 
+        )
+      }))
   }
 
   return (
@@ -94,9 +78,10 @@ const Tienda = () => {
               error={error}
               id="outlined-error-helper-text"
               label="Buscar Productos"
-              defaultValue="Buscar Productos"
+              defaultValue=""
               helperText={mensajeerror}
               onChange={(e) => handleChange(e.target.value)}
+              fullWidth
             />
             </form>
           </div>
@@ -138,7 +123,7 @@ const Tienda = () => {
         </div>
 
         <div className={style.productos}>
-          <ProductosTienda productos={arrayPro}/>
+          <ProductosTienda filtrar={filtrar} productos={productos}/>
         </div>
       </div>
 

@@ -2,18 +2,22 @@ import React from 'react'
 import Logo from '../../Imagenes/LogoRangers.png'
 import style from './ProductosTienda.module.css'
 
-export default function ProductosTienda({productos}){
+export default function ProductosTienda({productos, filtrar}){
+
+
+
     return(
         <div className={style.container}>
             <div className={style.gridPro}> 
-                {
-                productos.map(snack => (
+                {filtrar.length === 0 ?
+
+                typeof productos !== 'string' ? productos?.map(snack => (
 
                     <div className={style.producto}>
-                        <img className={style.img} src={snack.img} alt=""/>
+                        <img className={style.img} src={snack.image} alt="Imagen del producto no encontrada"/>
                         <div className={style.comprar}>
                             <div className={style.botton}>
-                                <p>{snack.nombre}</p>
+                                <p>{snack.name}</p>
                                 <button>+<span class="material-icons-round">shopping_cart</span></button>
                             </div>
                             <div className={style.tablanutriocional}>
@@ -24,7 +28,31 @@ export default function ProductosTienda({productos}){
 
                     </div>
                 ))
-            }     
+                : 
+                <h1>
+                    No se encontraron productos
+                </h1>
+                :
+                
+                filtrar?.map(snack => (
+
+                    <div className={style.producto}>
+                        <img className={style.img} src={snack.image} alt="Imagen del producto no encontrada"/>
+                        <div className={style.comprar}>
+                            <div className={style.botton}>
+                                <p>{snack.name}</p>
+                                <button>+<span class="material-icons-round">shopping_cart</span></button>
+                            </div>
+                            <div className={style.tablanutriocional}>
+                                        <p>Ver tabla nutricional + 1</p>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                ))
+
+                }     
             </div>  
         </div>
     )

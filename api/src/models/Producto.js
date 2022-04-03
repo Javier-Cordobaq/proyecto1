@@ -12,6 +12,7 @@ const Productos = new Schema({
     ref: 'Tipos'
   },
   image: String,
+  nutricional: String,
   date: {
     type: Date,
     default: Date.now

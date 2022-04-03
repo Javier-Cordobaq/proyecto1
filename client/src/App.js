@@ -2,6 +2,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom'
 import LandingPrincipal from './components/LandingPrincipal/LandingPrincipal';
 import Tienda from './components/Tienda/Tienda';
+import SubirProductos from './components/SubirProductos/SubirProductos';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
         <Route exact path='/' element={<LandingPrincipal/>} />
 
         <Route exact path='/tienda' element={<Tienda/>} />
+
+        <Route exact path='/subirproducto' element={<SubirProductos/>}/>
 
       </Routes>
     </div>
