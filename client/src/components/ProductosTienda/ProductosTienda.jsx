@@ -26,9 +26,6 @@ export default function ProductosTienda({productos, filtrar}){
                                 <p>{snack.name}</p>
                                 <button>+<span class="material-icons-round">shopping_cart</span></button>
                             </div>
-                            <div className={style.tablanutriocional}>
-                                        <p>Ver tabla nutricional + 1</p>
-                            </div>
                             <p>{snack.type.name}</p>
                         </div>
                         
@@ -55,9 +52,6 @@ export default function ProductosTienda({productos, filtrar}){
                             <div className={style.botton}>
                                 <p>{snack.name}</p>
                                 <button>+<span class="material-icons-round">shopping_cart</span></button>
-                            </div>
-                            <div className={style.tablanutriocional}>
-                                        <p>Ver tabla nutricional + 1</p>
                             </div>
                             <p>{snack.type.name}</p>
                         </div>

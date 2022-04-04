@@ -44,7 +44,29 @@ const SubirProductos = () => {
     setLoading(false);
   };
 
-  
+  const [image2, setImage2] = useState("");
+  const [loading2, setLoading2] = useState(false);
+
+  const uploadImageNutricional = async (e) => {
+    const files2 = e.target.files;
+    const data2 = new FormData();
+    data2.append("file", files2[0]);
+    data2.append("upload_preset", "tguasevk");
+    setLoading2(true);
+    const res2 = await fetch(
+      "https://api.cloudinary.com/v1_1/rangerenterprise/image/upload",
+      {
+        method: "POST",
+        body: data2,
+      }
+    );
+    const file2 = await res2.json();
+    setState({
+      ...state,
+      nutricional: file2.secure_url,
+    });
+    setLoading(false);
+  };
   
 /* ----------------------------------------------------- */
 
@@ -81,7 +103,8 @@ useEffect(() => {
     type: '',     
     name: '',
     price: 0,
-    image: ''
+    image: '',
+    nutricional: ''
 })
 
 const handleChange = (e) => {
@@ -181,7 +204,23 @@ const handleSumbit = (e) => {
                         hidden
                       />
                     </Button>
-                  </div>                
+                  </div>      
+
+                     <div className={styles.prueba}>
+                    <Button
+                      variant="contained"
+                      component="label"
+                      fullWidth
+                       >
+                      Tabla nutricional
+                      <input
+                        type="file"
+                        name="file"
+                        onChange={uploadImageNutricional}
+                        hidden
+                      />
+                    </Button>
+                  </div>           
 
                 <div className={styles.botonSubir}>
                     <button>Subir</button>    
