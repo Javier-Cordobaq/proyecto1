@@ -38,6 +38,7 @@
     padding: 1rem;
     font-weight: bold;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .img button {
@@ -100,6 +101,7 @@
     overflow: hidden;
     text-transform: uppercase;
     transition: 0.3s all;
+    font-weight: bold;
 }
 
 .tablanutriocional p {

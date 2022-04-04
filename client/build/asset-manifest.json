@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f44b7f21.css",
-    "main.js": "/static/js/main.3e035c2c.js",
+    "main.css": "/static/css/main.819a9f43.css",
+    "main.js": "/static/js/main.9c918e06.js",
     "static/js/787.b0807e75.chunk.js": "/static/js/787.b0807e75.chunk.js",
     "static/media/TorrePalomitas.png": "/static/media/TorrePalomitas.92afd29605cf03124221.png",
     "static/media/Paquetes.png": "/static/media/Paquetes.8f32cabeaddd86c2bd55.png",
@@ -18,12 +18,12 @@
     "index.html": "/index.html",
     "static/media/instagram.svg": "/static/media/instagram.ae0283c0ac64a806d76bdc338f34d16c.svg",
     "static/media/facebook.svg": "/static/media/facebook.58c41f7a0b3533c0e5317e48ffcf871d.svg",
-    "main.f44b7f21.css.map": "/static/css/main.f44b7f21.css.map",
-    "main.3e035c2c.js.map": "/static/js/main.3e035c2c.js.map",
+    "main.819a9f43.css.map": "/static/css/main.819a9f43.css.map",
+    "main.9c918e06.js.map": "/static/js/main.9c918e06.js.map",
     "787.b0807e75.chunk.js.map": "/static/js/787.b0807e75.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f44b7f21.css",
-    "static/js/main.3e035c2c.js"
+    "static/css/main.819a9f43.css",
+    "static/js/main.9c918e06.js"
   ]
 }
