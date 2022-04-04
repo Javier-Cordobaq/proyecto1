@@ -1,5 +1,5 @@
 .globalContainer {
-    height: 50vh;
+    height: 350px;
     width: 100%;
     background-color: var(--color-rosa);
     display: flex;
@@ -53,11 +53,11 @@
 }
 
 .paquetes {
-    height: 100%;
-    width: 43%;
+    min-width: 40%;
+    max-width: 40%;
     background-image: url('../../Imagenes/paquetesfooter.png');
-    background-size: cover;
-    background-position: center center;
+    background-size: contain;
+    background-position: bottom;
     background-repeat: no-repeat;
 }
 
@@ -82,4 +82,187 @@
 
 .botonHeader:hover span{
     transform: translateX(50px);
+}
+
+@media (min-width: 480px) and (max-width: 1350px) {
+    .globalContainer {
+        height: 80vh;
+        width: 100%;
+        background-color: var(--color-rosa);
+        display: flex;
+        flex-direction: column;
+        color: var(--color-blanco);
+        box-sizing: border-box;
+        padding: 3rem 3rem 0 3rem;
+    }
+    
+    .contTexto {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 40%;
+        width: 100%;
+    }
+    
+    .textos {
+        box-sizing: border-box;
+        padding: 0;
+    }
+    
+    .textos h1 {
+        font-size: 5vh;
+        margin-bottom: 1rem;
+    }
+    
+    .textos p {
+        font-size: 4vh;
+        width: 70%;
+        margin-bottom: 2rem;
+    }
+    
+    .inputs {
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+    
+    .inputs input {
+        height: 60px;
+        border-radius: 5px;
+        border: none;
+        margin-right: 1rem;
+        font-size: 3vh;
+        width: 30%;
+        box-sizing: border-box;
+        padding-left: 1.5rem;
+        
+    }
+    
+    .inputs input::placeholder {
+        display: flex;
+        color: black;
+    }
+    
+    .paquetes {
+        height: 60%;
+        min-width: 100%;
+        background-image: url('../../Imagenes/paquetesfooter.png');
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+    
+    .botonHeader{
+        width: 40%;
+        border: none;
+        height: 60px;
+        border-radius: 5px;
+        font-size:25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 20px;
+        background-color: var(--color-blanco);
+    }
+    
+    .botonHeader span{
+        font-size:45px;
+        margin-right: 20%;
+        transition: 0.5s all ease-in-out;
+    }
+    
+    .botonHeader:hover span{
+        transform: translateX(50px);
+    }
+}
+
+@media (max-width: 480px) {
+    .globalContainer {
+        height: 100vh;
+        width: 100%;
+        background-color: var(--color-rosa);
+        display: flex;
+        flex-direction: column;
+        color: var(--color-blanco);
+    }
+    
+    .contTexto {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 70%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 2rem;
+    }
+    
+    .textos {
+        box-sizing: border-box;
+        padding: 0;
+    }
+    
+    .textos h1 {
+        font-size: 5vh;
+        margin-bottom: 1rem;
+    }
+    
+    .textos p {
+        font-size: 3vh;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    
+    .inputs input {
+        height: 60px;
+        border-radius: 5px;
+        margin: 0;
+        border: none;
+        font-size: 4vh;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .inputs input::placeholder {
+        display: flex;
+        color: black;
+    }
+    
+    .paquetes {
+        height: 30%;
+        min-width: 100%;
+        background-image: url('../../Imagenes/paquetesfooter.png');
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+    
+    .botonHeader{
+        width: 100%;
+        border: none;
+        height: 60px;
+        border-radius: 5px;
+        font-size:25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 20px;
+        background-color: var(--color-blanco);
+    }
+    
+    .botonHeader span{
+        font-size:45px;
+        margin-right: 20%;
+        transition: 0.5s all ease-in-out;
+    }
+    
+    .botonHeader:hover span{
+        transform: translateX(50px);
+    }
 }

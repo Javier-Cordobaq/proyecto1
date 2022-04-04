@@ -76,7 +76,7 @@ const Nav = () => {
                 {menu === false ? null : 
                 <div className={Style.prueba}>
                    <ul className={Style.rutasResponsive}>
-                            <li>Acerca de</li>
+                            <Link to='/'><li>Acerca de</li></Link>
                             <li>Productos</li>
                             <a href='#Bruss'><li>Bruss</li></a>
                             <li>Puntos de venta</li>
