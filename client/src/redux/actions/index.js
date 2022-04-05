@@ -6,6 +6,7 @@ export const POST_PRODUCTS = 'POST_PRODUCTS'
 export const POST_USUARIOS = 'POST_PRODUCTS'
 export const GET_TIPOS = 'GET_TIPOS'
 export const SET_MENSAJE = 'SET_MENSAJE'
+export const PAGADO = 'PAGADO'
 
 export const cambiarIngles = () => async dispatch => {
 
@@ -21,6 +22,17 @@ export const getProducts = () => async dispatch => {
 
     return dispatch({
         type: GET_PRODUCTS,
+        payload: json.data
+    })
+
+}
+
+export const pagado = () => async dispatch => {
+
+    const json = await axios.post(`http://localhost:3001/Paypal/create-order`)
+
+    return dispatch({
+        type: PAGADO,
         payload: json.data
     })
 

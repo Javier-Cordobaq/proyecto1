@@ -3,18 +3,26 @@ import {
   GET_PRODUCTS,
   GET_TIPOS,
   POST_PRODUCTS,
-  SET_MENSAJE
+  SET_MENSAJE,
+  PAGADO
 } from '../actions/index';
 
 const inicialState = { 
     idioma: "español",
     productos: [],
     tipos: [],
-    mensaje: ''
+    mensaje: '',
+    infocompra: ''
 };
 
 const rootReducer = (state = inicialState, action) => {
     switch (action.type) {
+
+        case PAGADO:
+            return {
+                ...state,
+                infocompra: action.payload
+            }
 
         case POST_PRODUCTS:
             return {

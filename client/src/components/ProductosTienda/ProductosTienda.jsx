@@ -14,7 +14,7 @@ export default function ProductosTienda({productos, filtrar}){
 
                 typeof productos !== 'string' ? productos?.map(snack => (
 
-                    <Link to='/'>
+                    <Link to='/carrito'>
                     <div className={style.producto}>
                         <div className={style.img}>
                             <img src={snack.image} alt="Imagen del producto no encontrada"/>
@@ -41,7 +41,7 @@ export default function ProductosTienda({productos, filtrar}){
                 
                 filtrar?.map(snack => (
 
-                    <Link to='/'>
+                    <Link to='/carrito'>
                     <div className={style.producto}>
                         <div className={style.img}>
                             <img src={snack.image} alt="Imagen del producto no encontrada"/>
