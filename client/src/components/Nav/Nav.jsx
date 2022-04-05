@@ -28,9 +28,9 @@ const Nav = () => {
                   </ul>
                  :
                    <ul className={Style.rutas}>
-                    <li><Link to='/'>Acerca de</Link></li>
-                    <li><a href='#productos'>Productos</a></li>
+                    <li><a href='#acerca'>Acerca de</a></li>
                     <li><a href='#Bruss'>Bruss</a></li>
+                    <li><a href='#productos'>Productos</a></li>
                     <li>Puntos de venta</li>
                     <li><Link to='/tienda'>Tienda</Link></li>
                   </ul>

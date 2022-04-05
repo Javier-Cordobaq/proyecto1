@@ -118,6 +118,10 @@ const handleSumbit = (e) => {
     setEnviado(true)
 }
 
+const tipo = tipos.filter((c) => {
+  return ( c?._id?.includes(state.type) )
+})
+
   return (
     <div className={styles.contformulario}>
 
@@ -235,15 +239,12 @@ const handleSumbit = (e) => {
                         <img className={styles.prueba} src={state.image} alt=""/>
                       </div>
                         <div className={styles.comprar}>
-                        <p>{state.type}</p>
+                        <p>$ {state.price}</p>
                             <div className={styles.botton}>
                                 <p>{state.name}</p>
                                 <button>+<span class="material-icons-round">shopping_cart</span></button>
                             </div>
-                            <div className={styles.tablanutriocional}>
-                                        <p>Ver tabla nutricional + 1</p>
-                            </div>
-                            <p>{state.price}</p>
+                            <p>{tipo.length !== 0 ? tipo[0].name : null}</p>
                       </div>
                         
 

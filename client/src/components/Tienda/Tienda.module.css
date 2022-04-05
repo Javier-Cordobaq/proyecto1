@@ -49,6 +49,13 @@
     font-weight: bold;
     padding: 10px 18px;
     border-radius: 3px;
+    transition: 0.3s all;
+}
+
+.contxPrecio button:hover {
+    background-color: rgb(255, 174, 22);
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .precioBoton {

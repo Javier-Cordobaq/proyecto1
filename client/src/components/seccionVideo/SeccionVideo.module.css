@@ -64,6 +64,15 @@
     padding-left: 20px;
 
 }
+
+.TextoSeccion a {
+    text-decoration: none;
+}
+
+.botonConocer:hover {
+    cursor: pointer;
+}
+
 .botonConocer span{
     font-size:45px;
     margin-right: 20%;

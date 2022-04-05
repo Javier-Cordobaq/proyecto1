@@ -16,7 +16,7 @@ export default function SeccionVideo() {
                             No importa qué esté haciendo, siempre tiene su funda de Ranger Pops o Rings a la mano
                         </p>
                     </div>
-                    <button className={style.botonConocer}>Conoce más de Bruss <span class="material-icons-two-tone">arrow_forward</span></button>
+                    <a href='https://dumondesnacks.com/blog/'><button className={style.botonConocer}>Conoce más de Bruss<span class="material-icons-two-tone">arrow_forward</span></button></a>
                 </div>
                 <div className={style.video}>
                 <video loop autoPlay muted>

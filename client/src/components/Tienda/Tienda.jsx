@@ -48,7 +48,15 @@ const Tienda = () => {
     }
   }
 
+  const handleTipos = (nombre) => {
+    setState(nombre)
+    setFiltrar(productos.filter((c) => {
+      return (c?.type.name.toLocaleLowerCase() === nombre.toLocaleLowerCase())
+  }))
+  }
+
   const handleChange = (nombre) => {
+
     if (nombre.match(valoresAceptados)) {
       setMensajeError('No puedes ingresar numeros')
       setError(true)
@@ -56,11 +64,20 @@ const Tienda = () => {
       setMensajeError('')
       setError(false)
     }
+
     setState(nombre)
+
       setFiltrar(productos.filter((c) => {
         return ( c?.name?.toLocaleLowerCase().includes(state.toLocaleLowerCase()) || c?.type.name.toLocaleLowerCase().includes(state.toLocaleLowerCase())
         )
     }))
+  }
+
+  const handlePrice = (e) => {
+    e.preventDefault()
+    setFiltrar(productos.filter((c) => {
+      return c.price <= slider 
+  }))
   }
 
   return (
@@ -86,11 +103,11 @@ const Tienda = () => {
             </form>
           </div>
 
-            <div className={style.contxPrecio}>
+            <form onSubmit={handlePrice} className={style.contxPrecio}>
               <h2>Filtrar por precio</h2>
                   <Slider
                     aria-label="Temperature"
-                    defaultValue={10}
+                    defaultValue={0}
                     getAriaValueText={valuetext}
                     valueLabelDisplay="auto"
                     step={5}
@@ -102,20 +119,24 @@ const Tienda = () => {
                   <p>{`PRECIO: $0 - $${slider}`}</p>
                   <button>Filtrar</button>
                 </div>
-            </div>
+            </form>
 
           <div className={style.categorias}>
             <h2>Categorias</h2>
             <div>
-                  <h3 onClick={()=>handleChange('MERCHANDISING')} className={`${state === 'MERCHANDISING'  ? style.check_sskill  : style.uncheck_sskill }`}>MERCHANDISING</h3>
+                  <h3 onClick={()=> handleTipos('MERCHANDISING')} className={`${state === 'MERCHANDISING'  ? style.check_sskill  : style.uncheck_sskill }`}>MERCHANDISING</h3>
             </div>
             
             <div>
-                  <h3 onClick={()=>handleChange('STICKER')} className={`${state === 'STICKER' ? style.check_sskill  : style.uncheck_sskill }`}>STICKER</h3>
+                  <h3 onClick={() => handleTipos('STICKER')} className={`${state === 'STICKER' ? style.check_sskill  : style.uncheck_sskill }`}>STICKER</h3>
             </div>
 
             <div>
-                  <h3 onClick={()=>handleChange('SNACKS')} className={`${state === 'SNACKS' ? style.check_sskill  : style.uncheck_sskill }`}>SNACKS</h3>
+                  <h3 onClick={()=> handleTipos('SNACKS')} className={`${state === 'SNACKS' ? style.check_sskill  : style.uncheck_sskill }`}>SNACKS</h3>
+            </div>
+
+            <div>
+                  <h3 onClick={()=> handleTipos('')} className={`${state === '' ? style.check_sskill  : style.uncheck_sskill }`}>TODOS</h3>
             </div>
           </div>
 

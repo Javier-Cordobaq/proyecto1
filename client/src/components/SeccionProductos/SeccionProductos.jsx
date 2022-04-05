@@ -3,6 +3,7 @@ import style from './SeccionProductos.module.css';
 import snack1 from '../../Imagenes/snack1.png'
 import snack2 from '../../Imagenes/snack2.png'
 import snack3 from '../../Imagenes/snack3.png'
+import { Link } from 'react-router-dom'
 
 export default function SeccionProductos(){
     const arraySnacks = [
@@ -51,7 +52,7 @@ export default function SeccionProductos(){
                                 <div className={style.comprar}>
                                     <div className={style.botton}>
                                         <p>{snack.nombre}</p>
-                                        <button>Comprar</button>
+                                        <Link to='/tienda'><button>Comprar</button></Link>
                                     </div>
                                     <div className={style.tablanutriocional}>
                                         <p>Ver tabla nutricional + 1</p>

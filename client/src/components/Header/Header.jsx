@@ -3,7 +3,7 @@ import style from './Header.module.css'
 import imagen from '../../Imagenes/Mano.png'
 export default function Header() {
     return (
-        <div className={style.contenedorHeader}>
+        <div id='acerca' className={style.contenedorHeader}>
             <div className={style.gridHeader}>
                 <div className={style.contenidoHeader}>
                     <div className={style.headerTexto}>

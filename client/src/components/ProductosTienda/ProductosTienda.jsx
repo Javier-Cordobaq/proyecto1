@@ -21,12 +21,12 @@ export default function ProductosTienda({productos, filtrar}){
                             <button className={style.mor}>Seleccionar opciones</button>
                         </div>
                         <div className={style.comprar}>
-                            <p>{snack.price}</p>
+                            <p className={style.tipo}>{snack.type.name}</p>
                             <div className={style.botton}>
                                 <p>{snack.name}</p>
-                                <button>+<span class="material-icons-round">shopping_cart</span></button>
+                               {/*  <button>+<span class="material-icons-round">shopping_cart</span></button> */}
                             </div>
-                            <p>{snack.type.name}</p>
+                            <p className={style.precio}>$ {snack.price}</p>
                         </div>
                         
 
@@ -48,12 +48,12 @@ export default function ProductosTienda({productos, filtrar}){
                             <button className={style.mor}>Seleccionar opciones</button>
                         </div>
                         <div className={style.comprar}>
-                            <p>{snack.price}</p>
+                            <p className={style.tipo}>{snack.type.name}</p>
                             <div className={style.botton}>
                                 <p>{snack.name}</p>
-                                <button>+<span class="material-icons-round">shopping_cart</span></button>
+                               {/*  <button>+<span class="material-icons-round">shopping_cart</span></button> */}
                             </div>
-                            <p>{snack.type.name}</p>
+                            <p className={style.precio}>$ {snack.price}</p>
                         </div>
                         
 
