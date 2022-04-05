@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
     } else {
       const valdar = await Productos.findOne({ name })
       if (valdar) {
-        res.send('El producto ya existe' )
+        res.send('El producto ya existe')
       } else {
         const tipo = await Tipos.findById(type)
         const usuario = new Productos({
@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
 })
 
 router.get('/', async (req, res) => {
-  const allProducts = await Productos.find().populate('type', {'name' : 1})
+  const allProducts = await Productos.find().populate('type', { name: 1 })
 
   if (allProducts.length > 0) {
     res.json(allProducts)

@@ -5,7 +5,7 @@ router.post('/', async (req, res) => {
   try {
     const { name, email } = req.body
     if (name === '' || email === '') {
-      res.send( 'Todos los campos son obligatorios')
+      res.send('Todos los campos son obligatorios')
     } else {
       const validar = await Usuario.findOne({ email })
       if (validar) {
