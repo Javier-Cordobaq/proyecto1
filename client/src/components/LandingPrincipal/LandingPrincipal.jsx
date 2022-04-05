@@ -12,7 +12,7 @@ import Suscribirse from '../Suscribirse/Suscribirse';
 const LandingPrincipal = () => {
   return (
     <div className={style.globalCont}>
-      <div><Nav/></div>
+      <Nav/>
       <div><Header/></div>
       <div><SeccionAmarilla/></div>
       <div><SeccionImagenes/></div>

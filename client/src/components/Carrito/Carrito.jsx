@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { pagado } from '../../redux/actions'
 import Swal from 'sweetalert2'
+import style from '../Carrito/Carrito.module.css'
 
 const Carrito = () => {
 
@@ -11,7 +12,7 @@ console.log(infocompra)
 const dispath = useDispatch();
 
   return (
-    <div>
+    <div className={style.contGlobal}>
         <button onClick={() => dispath(pagado())}>Comprar</button>
         <div>
             {infocompra !== '' ?
@@ -19,7 +20,7 @@ const dispath = useDispatch();
             position: 'center',
             icon: 'success',
             title:'Cargando',
-            footer: `<a href=${infocompra}>Ir a paypal</a>`
+            confirmButtonText: `<a href=${infocompra}>Ir a paypal</a>`
             })
             :
             null

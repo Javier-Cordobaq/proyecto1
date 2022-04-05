@@ -36,7 +36,7 @@ export default function SeccionProductos(){
     ]
 
     return(
-        <div className={style.globaContainer}>
+        <div id='productos' className={style.globaContainer}>
             <div className={style.title}>
              <h1>Los nuevos snacks favoritos de tu familia</h1>
             </div>

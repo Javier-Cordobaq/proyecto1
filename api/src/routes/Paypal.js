@@ -83,7 +83,7 @@ router.get('/capture-order', async (req, res) => {
 })
 router.get('/cancel-order', (req, res) => {
   try {
-    res.redirect('http://localhost:3001/Tienda')
+    res.redirect('http://localhost:3000/tienda')
   } catch(err) {
     res.status(500).send(err.message)
   }

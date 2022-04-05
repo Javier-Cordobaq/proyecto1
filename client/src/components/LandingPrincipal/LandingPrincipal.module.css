@@ -1,7 +1,6 @@
-/* .globalCont {
-    display: flex;
-    flex-direction: column;
-} */
+ .globalCont {
+    position: relative;
+} 
 
 /* @media (max-width: 480px) {
     .globalCont {

@@ -1,0 +1,30 @@
+.contGlobal {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-celeste);
+}
+
+.contGlobal a {
+    text-decoration: none;
+    color: white;
+}
+
+.contGlobal button {
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 3vh;
+    color: var(--color-blanco);
+    background-color: var(--color-azul);
+    transition: 0.3s all;
+}
+
+.contGlobal button:hover {
+    background-color: #175067;
+    transform: scale(1.1);
+    cursor: pointer;
+}

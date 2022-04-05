@@ -5,7 +5,7 @@ import Tienda from './components/Tienda/Tienda';
 import SubirProductos from './components/SubirProductos/SubirProductos';
 import Carrito from './components/Carrito/Carrito';
 import CompraEfectiva from './components/CompraEfectiva/CompraEfectiva';
-
+import SeccionVideo from './components/seccionVideo/SeccionVideo';
 
 function App() {
   function fetchApi() {

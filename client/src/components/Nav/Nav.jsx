@@ -8,6 +8,9 @@ import insta from '../../Imagenes/instagram.svg'
 
 const Nav = () => {
 
+  const tienda = '/tienda'
+  const ruta = window.location.pathname
+
   const [menu, setMenu] = useState(false)
 
   return (
@@ -17,13 +20,22 @@ const Nav = () => {
                     <img src={Logo} alt='Logo not Found'/>
                 </div>
                 <div className={Style.contenedorDerecha}>
-                        <ul className={Style.rutas}>
-                            <li><Link to='/'>Acerca de</Link></li>
-                            <li>Productos</li>
-                            <li><a href='#Bruss'>Bruss</a></li>
-                            <li>Puntos de venta</li>
-                            <li><Link to='/tienda'>Tienda</Link></li>
-                        </ul>
+                  { ruta === tienda ? 
+
+                   <ul className={Style.rutas}>
+                   <li><Link to='/'>Home</Link></li>
+                   <li><Link to='/tienda'>Tienda</Link></li>
+                  </ul>
+                 :
+                   <ul className={Style.rutas}>
+                    <li><Link to='/'>Acerca de</Link></li>
+                    <li><a href='#productos'>Productos</a></li>
+                    <li><a href='#Bruss'>Bruss</a></li>
+                    <li>Puntos de venta</li>
+                    <li><Link to='/tienda'>Tienda</Link></li>
+                  </ul>
+
+                  }
                 
                     <div className={Style.botones}>
                       
@@ -78,7 +90,7 @@ const Nav = () => {
                    <ul className={Style.rutasResponsive}>
                             <Link to='/'><li>Acerca de</li></Link>
                             <li>Productos</li>
-                            <a href='#Bruss'><li>Bruss</li></a>
+                            <Link to='/#Bruss' ><li>Bruss</li></Link>
                             <li>Puntos de venta</li>
                             <Link to='/tienda'><li>Tienda</li></Link>
                         </ul>
