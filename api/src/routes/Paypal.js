@@ -3,7 +3,7 @@ const router = express.Router()
 const PAYPAL_API_CLIENT = 'AU-y-eZbnaeVi-C8tQUQWVWBtVVVL1K6QTS6dZtS4ZpXZ_NapXmM4RiAZtIy_KuENpl_BxeWkA9VAvWk'
 const PAYPAL_API_SECRET = 'EO6tp6jSSs7hwsC1gVKSpIJi89m2Wgugbjlxue9EI5UO4pfv5FiCiGmyfAasTp7qJzNd9aVSvHCZ8-hK'
 const PAYPAL_API_URL = 'https://api-m.sandbox.paypal.com'
-const HOST = 'http://localhost:3000'
+const HOST = 'http://localhost:3001'
 // const ACCESS_TOKE_PAYPAL = 'A21AAKum_E3qjWFnEWKYDGhjQVp1_6K9VmsjmzoxCyGK8JmMQq-igBEf2i_9D0P82uX_Y8_njEiXKMGvke0m1giyd-W0eYZow'
 const axios = require('axios')
 router.post('/create-order', async (req, res) => {
@@ -23,7 +23,7 @@ router.post('/create-order', async (req, res) => {
         brand_name: 'Ranger',
         landing_page: 'LOGIN',
         user_action: 'PAY_NOW',
-        return_url: `${HOST}`,
+        return_url: `${HOST}/Paypal/capture-order`,
         cancel_url: `${HOST}/Paypal/cancel-order`
       }
     }
@@ -53,8 +53,8 @@ router.post('/create-order', async (req, res) => {
   }
 })
 
-router.get('/capture-order/:token', async (req, res) => {
-  const { token } = req.params
+router.get('/capture-order', async (req, res) => {
+  const { token } = req.query
   try {
     const params = new URLSearchParams()
     params.append('grant_type', 'client_credentials')
@@ -76,7 +76,7 @@ router.get('/capture-order/:token', async (req, res) => {
     })
 
     console.log(response.data)
-    res.json(response.data)
+    res.redirect('http://localhost:3000/Pagado')
   } catch(err) {
     res.status(500).send(err.message)
   }
