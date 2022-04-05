@@ -1,6 +1,6 @@
 import react from 'react';
 import style from './Header.module.css'
-import imagen from '../../Imagenes/Mano.png'
+import imagen from '../../Imagenes/paqueHeader.png'
 export default function Header() {
     return (
         <div id='acerca' className={style.contenedorHeader}>

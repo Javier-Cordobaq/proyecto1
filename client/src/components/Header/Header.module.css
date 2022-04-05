@@ -6,11 +6,15 @@
     grid-template-columns: repeat(2,1fr);
     place-items: center;
 }
+.imagenHeader{
+    background-color: var(--color-celeste);
+}
 .imagenHeader img{
     display: block;
     width: 100%;
     height: 100%;
 }
+
 .contenidoHeader{
     background-color: var(--color-celeste);
     height: 100%;

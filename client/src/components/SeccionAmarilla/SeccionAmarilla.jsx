@@ -1,8 +1,8 @@
 import react from 'react';
 import style from './SeccionAmarilla.module.css'
-import cereal1 from '../../Imagenes/cereal1.png'
-import cereal2 from '../../Imagenes/cereal2.png'
-import cereal3 from '../../Imagenes/cereal3.png'
+import cereal1 from '../../Imagenes/cereal1.jpg'
+import cereal2 from '../../Imagenes/cereal2.jpg'
+import cereal3 from '../../Imagenes/cereal3.jpg'
 export default function SeccionAmarilla() {
     return (
         <div className={style.seccionAmarilla}>
@@ -20,7 +20,7 @@ export default function SeccionAmarilla() {
 
                     </div>
                     <div className={style.item}>
-                        <img src={cereal2} alt="" />
+                        <img src={cereal3} alt="" />
                         <p>Productos deliciosos que se adaptan a tu familia</p>
                     </div>
                 </div>

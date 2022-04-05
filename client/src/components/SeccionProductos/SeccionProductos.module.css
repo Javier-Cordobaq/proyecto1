@@ -38,7 +38,7 @@
 .img{
     display: block;
     margin: 0 auto;
-    width: 50%;
+    width: 300px;
 }
 
 .comprar{
@@ -48,6 +48,9 @@
     justify-content: center;
     align-items: center;
 
+}
+.producto{
+    width: 100%;
 }
 .comprar button {
     background-color: var(--color-celeste);

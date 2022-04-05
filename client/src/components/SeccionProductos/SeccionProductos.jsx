@@ -3,6 +3,9 @@ import style from './SeccionProductos.module.css';
 import snack1 from '../../Imagenes/snack1.png'
 import snack2 from '../../Imagenes/snack2.png'
 import snack3 from '../../Imagenes/snack3.png'
+import r1 from '../../Imagenes/rings1.png'
+import r2 from '../../Imagenes/rings2.png'
+import r3 from '../../Imagenes/rings3.png'
 import { Link } from 'react-router-dom'
 
 export default function SeccionProductos(){
@@ -23,15 +26,15 @@ export default function SeccionProductos(){
 
     const rings = [
         {
-            img:snack1,
+            img:r1,
             nombre:'White Cheddar',
         },
         {
-            img:snack2,
+            img:r2,
             nombre:'Caramel Churro',
         },
         {
-            img:snack3,
+            img:r3,
             nombre:'Sour cream & Onion',
         }
     ]
