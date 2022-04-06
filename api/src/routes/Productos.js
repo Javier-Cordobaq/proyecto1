@@ -46,5 +46,14 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/:id', async (req, res) => {
+  const allProducts = await Productos.findOne({ _id: req.params.id })
+  if (allProducts.length > 0) {
+    res.status(200).json(allProducts)
+  } else {
+    res.send('No hay productos')
+  }
+})
+
 // exportar
 module.exports = router

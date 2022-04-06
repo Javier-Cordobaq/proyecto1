@@ -1,18 +1,18 @@
 const { Schema, model } = require('mongoose')
 
 const Productos = new Schema({
-  name: String,
+  name: {String, required: true, unique: true},
   price: {
     type: Number,
     default: 0
   },
-  // tipo de producto
   type: {
     type: Schema.Types.ObjectId,
     ref: 'Tipos'
   },
   image: String,
   nutricional: String,
+  detalle: String,
   date: {
     type: Date,
     default: Date.now
