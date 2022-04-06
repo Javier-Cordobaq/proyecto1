@@ -26,7 +26,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 100%;
     transition: 0.4s all;
 }
 
@@ -67,10 +67,13 @@
 }
 
 .comprar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--color-celeste);
     border: none;
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 7px 20px;
     font-weight: 500;    
     color: var(--color-blanco);
     font-size: 2vh;
@@ -79,8 +82,21 @@
     transition: 0.3s all ease-in-out;
 }
 
+.comprar button span {
+    background: var(--color-azul);
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* .comprar button:hover span {
+    background: var(--color-celeste);
+} */
+
 .comprar button:hover {
     background-color: var(--color-azul);
+    cursor: pointer;
 }
 
 .tipo {
@@ -108,9 +124,10 @@
 
 .producto:hover .botton p {
     color: var(--color-celeste);
-}
+} 
 
 .botton p {
+    color: black;
     font-size: 2vh;
     white-space: nowrap;
     overflow: hidden;

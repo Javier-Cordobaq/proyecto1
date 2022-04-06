@@ -7,6 +7,24 @@ export const POST_USUARIOS = 'POST_PRODUCTS'
 export const GET_TIPOS = 'GET_TIPOS'
 export const SET_MENSAJE = 'SET_MENSAJE'
 export const PAGADO = 'PAGADO'
+export const ADD_TO_CAR = 'ADD_TO_CAR'
+export const DELETE_FROM_CAR = 'DELETE_FROM_CAR'
+
+export const addToCar = (producto) => async dispatch => {
+
+    dispatch({
+        type: ADD_TO_CAR,
+        payload: producto
+    })
+}
+
+export const deleteFromCar = (producto) => async dispatch => {
+
+    dispatch({
+        type: DELETE_FROM_CAR,
+        payload: producto
+    })
+}
 
 export const cambiarIngles = () => async dispatch => {
 

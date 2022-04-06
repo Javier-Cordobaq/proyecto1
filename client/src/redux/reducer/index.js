@@ -4,7 +4,9 @@ import {
   GET_TIPOS,
   POST_PRODUCTS,
   SET_MENSAJE,
-  PAGADO
+  PAGADO,
+  ADD_TO_CAR,
+  DELETE_FROM_CAR
 } from '../actions/index';
 
 const inicialState = { 
@@ -12,11 +14,24 @@ const inicialState = {
     productos: [],
     tipos: [],
     mensaje: '',
-    infocompra: ''
+    infocompra: '',
+    carrito: []
 };
 
 const rootReducer = (state = inicialState, action) => {
     switch (action.type) {
+
+        case DELETE_FROM_CAR:
+            return {
+                ...state,
+                carrito: state.carrito.filter(c => c._id !== action.payload)
+            }
+
+        case ADD_TO_CAR:
+            return {
+                ...state,
+                carrito: [...state.carrito, action.payload]
+            }
 
         case PAGADO:
             return {

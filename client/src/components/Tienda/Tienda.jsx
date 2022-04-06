@@ -25,7 +25,6 @@ const Tienda = () => {
   }, [])
 
   const productos = useSelector(state => state.productos)
-  console.log(productos, 'Estos son los producspts')
 
   const [state, setState] = useState('')
   const [error, setError] = useState(false)
