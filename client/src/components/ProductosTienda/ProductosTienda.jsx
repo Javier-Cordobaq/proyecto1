@@ -16,21 +16,14 @@ export default function ProductosTienda({productos, filtrar}){
     } */
 
     const agregarCarrito = (producto) => {
-
-            const product = carrito.filter(c => c._id === producto.id)
-            console.log(product, 'Funcion agregar carrito')
-            if(product?.length > 0){
-                product[0].cantidad += 1
-            } else {
                 const pro = {
                     image: producto.image, 
                     price: producto.price, 
                     name: producto.name, 
-                    id: producto.id,
+                    id: producto._id,
                     cantidad: 1
                 }
                 dispatch(addToCar(pro))
-            }
      }
 
 

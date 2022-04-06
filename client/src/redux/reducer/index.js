@@ -28,10 +28,16 @@ const rootReducer = (state = inicialState, action) => {
             }
 
         case ADD_TO_CAR:
-            return {
+            return{
                 ...state,
-                carrito: [...state.carrito, action.payload]
-            }
+                carrito: !state.carrito.find(c=> c.name === action.payload.name)?
+                    [...state.carrito, action.payload]:
+                    state.carrito.map(c=> c.name === action.payload.name?
+                        {...c, cantidad: c.cantidad + 1}:
+                        c
+                    )
+            } 
+            
 
         case PAGADO:
             return {
