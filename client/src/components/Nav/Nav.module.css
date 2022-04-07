@@ -151,7 +151,7 @@
 }
 
 .carrito {
-   /* position: relative; */
+   position: relative; 
    margin-right: 1rem;
 }
 
@@ -439,7 +439,5 @@
     margin-right: 1rem;
     font-weight: bold;
 }
-
-
 
 }; 
