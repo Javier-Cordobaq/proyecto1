@@ -7,17 +7,21 @@ const HOST = 'http://localhost:3001'
 // const ACCESS_TOKE_PAYPAL = 'A21AAKum_E3qjWFnEWKYDGhjQVp1_6K9VmsjmzoxCyGK8JmMQq-igBEf2i_9D0P82uX_Y8_njEiXKMGvke0m1giyd-W0eYZow'
 const axios = require('axios')
 router.post('/create-order', async (req, res) => {
+  const { order } = req.body
   try {
     const order = {
       intent: 'CAPTURE',
       purchase_units: [
-        {
-          amount: {
-            currency_code: 'USD',
-            value: '100.00'
-          },
-          description: 'Producto de prueba'
-        }
+        order.map(item => {
+          return {
+            amount: {
+              currency_code: 'USD',
+              value: item.price
+            },
+            description: item.name,
+            custom_id: item.id
+          }
+        })
       ],
       application_context: {
         brand_name: 'Ranger',
