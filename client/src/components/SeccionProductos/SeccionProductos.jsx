@@ -7,8 +7,11 @@ import r1 from '../../Imagenes/rings1.png'
 import r2 from '../../Imagenes/rings2.png'
 import r3 from '../../Imagenes/rings3.png'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+
 
 export default function SeccionProductos(){
+    const idioma = useSelector(state => state.idioma)
     const arraySnacks = [
         {
             img:snack1,
@@ -42,7 +45,7 @@ export default function SeccionProductos(){
     return(
         <div id='productos' className={style.globaContainer}>
             <div className={style.title}>
-             <h1>Los nuevos snacks favoritos de tu familia</h1>
+             <h1>{idioma === "español" ? "Los nuevos snacks favoritos de tu familia" : "Your family’s new favorite snack"}</h1>
             </div>
             <div className={style.container}>
                 <h1>Ranger Pops</h1>
@@ -55,10 +58,10 @@ export default function SeccionProductos(){
                                 <div className={style.comprar}>
                                     <div className={style.botton}>
                                         <p>{snack.nombre}</p>
-                                        <Link to='/tienda'><button>Comprar</button></Link>
+                                        <Link to='/tienda'><button>{idioma === "español" ?"Comprar":"Buy"}</button></Link>
                                     </div>
                                     <div className={style.tablanutriocional}>
-                                        <p>Ver tabla nutricional + 1</p>
+                                        <p>{idioma === "español" ? "Ver tabla nutricional + 1" : "Show nutritional table +1"}</p>
                                     </div>
                                 </div>
                                 
@@ -81,10 +84,10 @@ export default function SeccionProductos(){
                         <div className={style.comprar}>
                             <div className={style.botton}>
                                 <p>{snack.nombre}</p>
-                                <button>Comprar</button>
+                                <Link to='/tienda'><button>{idioma === "español" ?"Comprar":"Buy"}</button></Link>
                             </div>
                             <div className={style.tablanutriocional}>
-                                        <p>Ver tabla nutricional + 1</p>
+                            <p>{idioma === "español" ? "Ver tabla nutricional + 1" : "Show nutritional table +1"}</p>
                             </div>
                         </div>
                         

@@ -22,11 +22,13 @@ const SeccionImagenes = () => {
                     nunca fueron tan saludables
                 </h1>
                 <p>
+                
                 Los Ranger Snacks son la golosina más saludable del mercado. 
                 Los canguiles Ranger Pops no tienen grasas saturadas ni endulzantes 
                 artificiales, mientras que los Ranger Rings obtienen todos los beneficios 
                 de la quinoa y las propiedades de la chía. <br/><br/>
                 Ambos son bajos en gluten, no contienen TACC ni grasas saturadas y son productos veganos
+                :
                 </p> 
                 </div>
                 :

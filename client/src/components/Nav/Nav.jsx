@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { cambiarIngles } from '../../redux/actions'
 import face from '../../Imagenes/facebook.svg'
 import insta from '../../Imagenes/instagram.svg'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import CardCarrito from '../CardCarrito/CardCarrito'
 import { style } from '@mui/material/node_modules/@mui/system'
 
@@ -13,10 +13,10 @@ const Nav = () => {
 
   const home = '/'
   const ruta = window.location.pathname
-
+  const dispatch = useDispatch()
   const productosCar = useSelector(state => state.carrito)
   console.log(productosCar, 'Carrito en el componente nav')
-
+  const idioma = useSelector(state => state.idioma)
   const [menu, setMenu] = useState(false)
   const [carrito, setCarrito] = useState(false)
 
@@ -98,6 +98,8 @@ const Nav = () => {
                       
                      
                         <a href='https://www.instagram.com/rangersnacks/?hl=es-la'><img src={insta} height={20} alt='Not Found'/></a>
+
+                        <a onClick={()=>{dispatch(cambiarIngles())}}><img src={insta} height={20} alt='Not Found'/></a>
                       
                     </div>
 
