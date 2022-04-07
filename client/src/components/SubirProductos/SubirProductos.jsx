@@ -104,7 +104,8 @@ useEffect(() => {
     name: '',
     price: 0,
     image: '',
-    nutricional: ''
+    nutricional: '',
+    detalle: '',
 })
 
 const handleChange = (e) => {
@@ -131,7 +132,8 @@ const tipo = tipos.filter((c) => {
 
             <h2>Información del producto</h2>
 
-                <div className={styles.prueba}>
+                <div className={styles.nombre}>
+                  <div className={styles.uno}>
                     <TextField
                     error={errores.error}
                     id="outlined-error-helper-text"
@@ -143,9 +145,8 @@ const tipo = tipos.filter((c) => {
                     onChange={handleChange}
                     fullWidth
                     />
-                </div>
-
-                <div className={styles.prueba}>
+                  </div>
+                  <div className={styles.dos}>
                     <TextField
                     error={errores.erro}
                     id="outlined-error-helper-text"
@@ -154,6 +155,22 @@ const tipo = tipos.filter((c) => {
                     type='number'
                     value={state.price}
                     name='price'
+                    helperText={errores.mensaje}
+                    onChange={handleChange}
+                    fullWidth
+                    />    
+                    </div>    
+                </div>
+
+                <div className={styles.prueba}>
+                    <TextField
+                    error={errores.erro}
+                    id="outlined-error-helper-text"
+                    label="Descripción"
+                    defaultValue=""
+                    type='text'
+                    value={state.detalle}
+                    name='detalle'
                     helperText={errores.mensaje}
                     onChange={handleChange}
                     fullWidth

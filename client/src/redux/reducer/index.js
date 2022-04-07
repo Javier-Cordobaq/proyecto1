@@ -6,7 +6,8 @@ import {
   SET_MENSAJE,
   PAGADO,
   ADD_TO_CAR,
-  DELETE_FROM_CAR
+  DELETE_FROM_CAR,
+  GET_BY_ID
 } from '../actions/index';
 
 const inicialState = { 
@@ -15,11 +16,18 @@ const inicialState = {
     tipos: [],
     mensaje: '',
     infocompra: '',
-    carrito: []
+    carrito: [],
+    detail: []
 };
 
 const rootReducer = (state = inicialState, action) => {
     switch (action.type) {
+
+        case GET_BY_ID:
+            return {
+                ...state,
+                detail: action.payload
+            }
 
         case DELETE_FROM_CAR:
             return {

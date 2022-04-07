@@ -1,45 +1,48 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Nav from '../Nav/Nav'
 import style from '../Detail/Detail.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { addToCar } from '../../redux/actions'
+import { getById } from '../../redux/actions'
 
 const Detail = () => {
 
-    const productos = useSelector(state => state.productos)
-    const carrito = useSelector(state => state.carrito)
-    console.log(carrito, 'Carrito')
-    const {id} = useParams();
+    useEffect(() => {
+        dispatch(getById(_id))
+    }, [])
 
-    const producto = productos.filter(c => c?._id === id)
-    console.log(producto)
+    const {_id} = useParams();
+    console.log(_id, 'Id detail')
+
+    const detail = useSelector(c => c.detail)
 
     const dispatch = useDispatch();
 
     const agregarCarrito = (producto) => {
-       if(carrito.includes(producto)){
-           alert('Ya agregaste el producto')
-       } else {
-           dispatch(addToCar(producto))
-       }
-    }
+        const pro = {
+            image: producto.image, 
+            price: producto.price, 
+            name: producto.name, 
+            _id: producto._id,
+            cantidad: 1
+        }
+        dispatch(addToCar(pro))
+    }   
 
   return (
     <div className={style.centrar}>
         <Nav/>
         <div className={style.globalCont}>
             <div className={style.imagen}>
-                <img src={producto.length !== 0 ? producto[0].image : null} alt='Not Found' />
+                <img src={detail.image} alt='Not Found' />
             </div>
             <div className={style.texto}>
-                <h1>{producto.length !== 0 ? producto[0].name : null}</h1>
-                <p>$ {producto.length !== 0 ? producto[0].price : null}</p>
-                <p>El clásico, el de toda la vida. Canguil natural con un toque de sal marina.
-                    Reventamos el maíz en aire caliente luego 
-                    rociamos un poco de aceite para que la sal se adhiera al producto de manera perfecta.
-                    </p>
-                <button onClick={() => {agregarCarrito(producto[0])}}>Añadir al carrito</button>
+                <h1>{detail.name}</h1>
+                <p className={style.price}>$ {detail.price}</p>
+                <p className={style.descripcion}>{detail.detalle}</p>
+                <button onClick={() => {agregarCarrito(detail)}}>Añadir al carrito</button>
+               {/*  <p className={style.categoria}>{detail.type.name}</p> */}
             </div>
         </div>
     </div>

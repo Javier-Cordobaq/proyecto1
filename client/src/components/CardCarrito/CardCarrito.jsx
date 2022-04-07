@@ -3,14 +3,13 @@ import style from '../CardCarrito/CardCarrito.module.css'
 import { deleteFromCar } from '../../redux/actions'
 import { useDispatch } from 'react-redux'
 
-const CardCarrito = ({name, price, image, id, cantidad}) => {
+const CardCarrito = ({name, price, image, _id, cantidad}) => {
 
     const dispatch = useDispatch();
-    console.log(cantidad, 'Componente cardCarrito')
 
   return (
     <div className={style.globalCont}>
-        <div onClick={() => {dispatch(deleteFromCar(id))}} className={style.delete}>
+        <div onClick={() => {dispatch(deleteFromCar(_id))}} className={style.delete}>
             <span class="material-icons">
                 clear
             </span>
@@ -25,10 +24,10 @@ const CardCarrito = ({name, price, image, id, cantidad}) => {
             <p>{name}</p>
         </div>
         <div className={style.name}>
-            <p>{cantidad}</p>
+            <p>x {cantidad}</p>
         </div>
         <div className={style.price}>
-            <p>$ {price}</p>
+            <p>$ {(price * cantidad).toFixed(2)}</p>
         </div>
     </div>
   )

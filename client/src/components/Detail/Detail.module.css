@@ -12,7 +12,7 @@
     grid-template-columns: repeat(2, 1fr);
     min-height: 100vh;
     place-items: center;
-    width: 1150px;
+    width: 1100px;
 }
 
 .imagen {
@@ -20,6 +20,7 @@
     max-width: 100%;
     min-height: 100%;
     overflow: hidden;
+    padding: 0 10px;
 }
 
 .imagen img {
@@ -29,4 +30,107 @@
 
 .texto {
     min-height: 100%;
+}
+
+.texto h1 {
+    font-size: 4vh;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.descripcion {
+    color: #777777;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 25px;
+    line-height: 28px;
+}
+
+.price {
+    color: #bcbcbc;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 30px 0;
+}
+
+.texto button {
+    background-color: rgb(255, 191, 72);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 3px;
+    transition: 0.3s all;
+}
+
+.texto button:hover {
+    background-color: rgb(255, 174, 22);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+@media (min-width: 480px) and (max-width: 768px){
+    .centrar {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .globalCont {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+        width: 80%;
+    }
+    
+    .texto button {
+        background-color: rgb(255, 191, 72);
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 10px 18px;
+        border-radius: 3px;
+        transition: 0.3s all;
+        margin-bottom: 3rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .centrar {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .globalCont {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+        width: 80%;
+    }
+    
+    .texto button {
+        background-color: rgb(255, 191, 72);
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 10px 18px;
+        border-radius: 3px;
+        transition: 0.3s all;
+        margin-bottom: 3rem;
+    }
+
 }

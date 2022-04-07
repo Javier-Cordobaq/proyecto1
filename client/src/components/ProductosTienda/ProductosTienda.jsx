@@ -20,7 +20,7 @@ export default function ProductosTienda({productos, filtrar}){
                     image: producto.image, 
                     price: producto.price, 
                     name: producto.name, 
-                    id: producto._id,
+                    _id: producto._id,
                     cantidad: 1
                 }
                 dispatch(addToCar(pro))
@@ -46,7 +46,7 @@ export default function ProductosTienda({productos, filtrar}){
                             <p className={style.tipo}>{snack.type.name}</p>
                             <div className={style.botton}>
                                 <p>{snack.name}</p>
-                                <button onClick={() => {agregarCarrito(snack)}}>Agregar<span class="material-icons-round">add_shopping_cart</span></button> 
+                                <button onClick={() => {agregarCarrito(snack)}}><span class="material-icons-round">add_shopping_cart</span>Agregar</button> 
                             </div>
                             <p className={style.precio}>$ {snack.price}</p>
                         </div>
@@ -71,7 +71,7 @@ export default function ProductosTienda({productos, filtrar}){
                             <p className={style.tipo}>{snack.type.name}</p>
                             <div className={style.botton}>
                                 <p>{snack.name}</p>
-                                 <button onClick={() => dispatch(addToCar(snack))}><span class="material-icons-round">shopping_cart</span></button> 
+                                <button onClick={() => {agregarCarrito(snack)}}><span class="material-icons-round">add_shopping_cart</span>Agregar</button> 
                             </div>
                             <p className={style.precio}>$ {snack.price}</p>
                         </div>

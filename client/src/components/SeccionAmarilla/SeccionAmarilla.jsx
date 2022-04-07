@@ -11,18 +11,18 @@ export default function SeccionAmarilla() {
             <div className={style.amarillaContenido}>
                 <h1>{idioma === "español" ? "Comer rico no tiene por qué ser dañino" : "Eating delicious shouldn't be harmful"}</h1>
                 <div className={style.grid}>
-                    <div className={style.item}>
+                    <div data-aos="zoom-in-up" data-aos-duration="1200" className={style.item}>
                         <img src={cereal1} alt="" />
-                        <p>{idioma === "español" ? "Snacks sin grasas, veganos y saludables" :"Vegan, fatless snacks"}</p>
-
+                        <p>{idioma === "español" ? "Snacks sin grasas, veganos y saludables" : "Vegan, fatless snacks"}</p>
                     </div>
-                    <div className={style.item}>
+
+                    <div data-aos="zoom-in-up" data-aos-duration="1200" className={style.item}>
                         <img src={cereal2} alt="" />
                         <p>{idioma === "español" ?"Variedad para todos los gustos" :"A variety of products"}</p>
-
                     </div>
-                    <div className={style.item}>
-                        <img src={cereal3} alt="" />
+
+                    <div data-aos="zoom-in-up" data-aos-duration="1200" className={style.item}>
+                        <img  src={cereal3} alt="" />
                         <p>{idioma === "español" ?"Productos deliciosos que se adaptan a tu familia":"Snacks that adapt to your lifestyle"}</p>
                     </div>
                 </div>

@@ -35,7 +35,13 @@
     height: 55%;
     border: 8px solid var(--color-blanco);
     border-radius: 50%;
+    transition: 0.4s all ease-in-out;
 }
+
+.item img:hover {
+    transform: scale(1.05);
+}
+
 .item p{
     display: flex;
     flex-wrap: wrap;

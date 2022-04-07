@@ -17,7 +17,7 @@
 }
 
 .inputs .prueba {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .imagen {
@@ -28,6 +28,15 @@
 
 .formControl {
     width: 100%;
+}
+
+.nombre {
+    display: flex;
+    margin: 1.5rem 0;
+}
+
+.nombre .uno {
+    margin-right: 1rem;
 }
 
 .botonSubir {

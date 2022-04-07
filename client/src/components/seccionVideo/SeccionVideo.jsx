@@ -7,7 +7,7 @@ export default function SeccionVideo() {
     return (
         <div id='Bruss' className={style.container}>
             <div className={style.gridVideo}>
-                <div className={style.TextoSeccion}>
+                <div data-aos="zoom-in-right" data-aos-duration="1100" className={style.TextoSeccion}>
                     <h1>{idioma === "español" ? "Te presentamos a Bruss" : "Meet Bruss"}</h1>
                     <div className={style.parrafo}>
                         <p>

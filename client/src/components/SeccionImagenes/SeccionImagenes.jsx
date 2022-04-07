@@ -12,7 +12,7 @@ const SeccionImagenes = () => {
   return (
     <div className={style.containerWidth}>
         <div className={style.globalContainer}>
-            <div className={style.contenedorLeft}>
+            <div data-aos="zoom-in-right" data-aos-duration="1100" className={style.contenedorLeft}>
                 <div className={style.imagenLeft}>
                     
                 </div>
@@ -48,7 +48,7 @@ const SeccionImagenes = () => {
                 }
                 
             </div>
-            <div className={style.imagenRight}>
+            <div data-aos="zoom-in-left" data-aos-duration="1100" className={style.imagenRight}>
              
             </div>
         </div>

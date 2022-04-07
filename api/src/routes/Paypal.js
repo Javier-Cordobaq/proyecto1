@@ -21,6 +21,7 @@ router.post('/create-order', async (req, res) => {
             description: item.name,
             custom_id: item.id
           }
+        })
       ],
       application_context: {
         brand_name: 'Ranger',

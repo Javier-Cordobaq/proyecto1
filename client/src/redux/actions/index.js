@@ -9,6 +9,7 @@ export const SET_MENSAJE = 'SET_MENSAJE'
 export const PAGADO = 'PAGADO'
 export const ADD_TO_CAR = 'ADD_TO_CAR'
 export const DELETE_FROM_CAR = 'DELETE_FROM_CAR'
+export const GET_BY_ID = 'GET_BY_ID'
 
 export const addToCar = (producto) => async dispatch => {
 
@@ -40,6 +41,17 @@ export const getProducts = () => async dispatch => {
 
     return dispatch({
         type: GET_PRODUCTS,
+        payload: json.data
+    })
+
+}
+
+export const getById = (_id) => async dispatch => {
+
+    const json = await axios.get(`http://localhost:3001/productos/${_id}`)
+
+    return dispatch({
+        type: GET_BY_ID,
         payload: json.data
     })
 
