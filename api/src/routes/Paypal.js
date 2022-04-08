@@ -19,16 +19,6 @@ router.post('/create-order', async (req, res) => {
             currency_code: 'USD',
             value: total
           },
-          items:[ orden.map(item=>{
-            return {
-              name: item.name,
-              quantity: item.cantidad,
-              unit_amount: {
-                currency_code: 'USD',
-                value: item.price
-              }
-            }
-          })],
           desription: 'Compra en Ranger Snacks'
         }
       ],
@@ -88,7 +78,8 @@ router.get('/capture-order', async (req, res) => {
 
     })
 
-    console.log(response.data)
+    console.log(response.data.purchase_units[0].payments.captures[0].amount, 'Buscando la plata')
+    console.log(response.data.purchase_units[0].shipping)
     res.redirect('http://localhost:3000/Pagado')
   } catch (err) {
     res.status(500).send(err.message)

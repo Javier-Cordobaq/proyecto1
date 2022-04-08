@@ -19,7 +19,6 @@ const LogIn = () => {
                 type='text'
                 placeholder='Contraseña'
                 />
-                
             </form>
             
         </div>
