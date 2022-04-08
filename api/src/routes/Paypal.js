@@ -7,21 +7,35 @@ const HOST = 'http://localhost:3001'
 // const ACCESS_TOKE_PAYPAL = 'A21AAKum_E3qjWFnEWKYDGhjQVp1_6K9VmsjmzoxCyGK8JmMQq-igBEf2i_9D0P82uX_Y8_njEiXKMGvke0m1giyd-W0eYZow'
 const axios = require('axios')
 router.post('/create-order', async (req, res) => {
-  const { order } = req.body
+  const { orden } = req.body
   try {
+    // create order
+    const total = orden.map(item => item.price * item.cantidad).reduce((a, b) => a + b, 0)
     const order = {
       intent: 'CAPTURE',
       purchase_units: [
-        order.map(item => {
-          return {
-            amount: {
-              currency_code: 'USD',
-              value: item.price
-            },
-            description: item.name,
-            custom_id: item.id
-          }
-        })
+        // desdglozar el objeto orden
+        {
+          amount: {
+            currency_code: 'USD',
+            value: total
+          },
+          items: [
+            orden.map(item => {
+              return {
+                name: item.name,
+                description: item.description,
+                quantity: item.quantity,
+                category: item.category,
+                unit_amount: {
+                  currency_code: 'USD',
+                  value: item.price
+                }
+              }
+            }
+            )
+          ]
+        }
       ],
       application_context: {
         brand_name: 'Ranger',
@@ -81,16 +95,16 @@ router.get('/capture-order', async (req, res) => {
 
     console.log(response.data)
     res.redirect('http://localhost:3000/Pagado')
-  } catch(err) {
+  } catch (err) {
     res.status(500).send(err.message)
   }
 })
 router.get('/cancel-order', (req, res) => {
   try {
     res.redirect('http://localhost:3000/tienda')
-  } catch(err) {
+  } catch (err) {
     res.status(500).send(err.message)
   }
-}) 
+})
 
 module.exports = router

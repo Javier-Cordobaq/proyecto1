@@ -20,8 +20,8 @@ router.post('/', async (req, res) => {
           type: tipo._id,
           price,
           image,
-          nutricional, 
-          detalle,
+          nutricional,
+          detalle
         })
         usuario.save()
           .then(data => {
@@ -56,10 +56,9 @@ router.get('/:id', async (req, res) => {
     } else {
       res.send('No hay productos')
     }
-  } catch(err) {
+  } catch (err) {
     res.status(500).send(err)
   }
- 
 })
 
 // exportar
