@@ -2,28 +2,30 @@ import React, { useState } from 'react'
 import Style from '../Nav/Nav.module.css'
 import Logo from '../../Imagenes/LogoRangers.png'
 import { Link } from 'react-router-dom'
-import { cambiarIngles } from '../../redux/actions'
+import { cambiarIngles,pagado } from '../../redux/actions'
 import face from '../../Imagenes/facebook.svg'
 import insta from '../../Imagenes/instagram.svg'
 import { useSelector, useDispatch } from 'react-redux'
 import CardCarrito from '../CardCarrito/CardCarrito'
-import { style } from '@mui/material/node_modules/@mui/system'
+import Swal from 'sweetalert2'
 
 const Nav = () => {
 
   const home = '/'
   const ruta = window.location.pathname
   const dispatch = useDispatch()
+
   const productosCar = useSelector(state => state.carrito)
+  const infocompra = useSelector(state => state.infocompra)
+  const idioma = useSelector(state => state.idioma)
 
   /* const cantidad = productosCar.length */
+
   let bandera = 0
   let cantidad = 0
   const subtotal = productosCar.map(c => bandera += c.price * c.cantidad)
   const cantidadprueba = productosCar.map(c => cantidad += c.cantidad)
 
-  console.log(productosCar, 'Carrito en el componente nav')
-  const idioma = useSelector(state => state.idioma)
   const [menu, setMenu] = useState(false)
   const [carrito, setCarrito] = useState(false)
 
@@ -40,7 +42,7 @@ const Nav = () => {
                    <li><Link to='/'>Home</Link></li>
                    <li><Link to='/tienda'>Tienda</Link></li>  
 
-                    <div className={Style.filtros_cont}>        
+                    <div className={Style.contenedorModalCarrito}>        
                         <label>
                             <input 
                             className={Style.input_filtros}
@@ -87,8 +89,18 @@ const Nav = () => {
                           }
                             <div className={Style.comprar}>
                               <p>{`Subtotal: ${bandera.toFixed(2)}`}</p>
-                              <button>Comprar</button>
+                              <button onClick={() => dispatch(pagado())}>Comprar</button>
                             </div>
+                            {infocompra !== '' ?
+                              Swal.fire({
+                              position: 'center',
+                              icon: 'success',
+                              title:'Cargando',
+                              confirmButtonText: `<a href=${infocompra}>Ir a paypal</a>`
+                              })
+                              :
+                              null
+                            }
                         </div> 
                         }
                     </div>  
@@ -163,7 +175,8 @@ const Nav = () => {
                      <ul className={Style.rutasResponsive}>
                       <Link to='/'><li>Home</li></Link>
                       <Link to='/tienda'><li>Tienda</li></Link>  
-                      <div className={Style.filtros_cont}>        
+                      <li>
+                      <div className={Style.contenedirCheckBox}>        
                         <label>
                             <input 
                             className={Style.input_filtros}
@@ -171,19 +184,23 @@ const Nav = () => {
                             onChange={(c) => {setCarrito(c.target.checked)}}
                             />
                             {carrito === false ? 
+                         
                                <div className={Style.carrito}>
                                <span class="material-icons">
                                shopping_cart
                                </span>
                                {cantidad !== 0 ? <p>{cantidad}</p> : null}
                              </div>
+                             
                             :
+                            
                             <div className={Style.carrito}>
                             <span class="material-icons-outlined">
                             shopping_cart
                             </span>
                             {cantidad !== 0 ? <p>{cantidad}</p> : null}
                           </div>
+                         
                             }
                         </label>
                         {carrito === false ? null
@@ -210,11 +227,12 @@ const Nav = () => {
                           }
                             <div className={Style.comprar}>
                               <p>{`Subtotal: ${bandera.toFixed(2)}`}</p>
-                              <button>Comprar</button>
+                              <button onClick={() => dispatch(pagado())}>Comprar</button>
                             </div>
                         </div> 
                         }
                     </div>  
+                    </li>
                     </ul>
                     :
                     <ul className={Style.rutasResponsive}>

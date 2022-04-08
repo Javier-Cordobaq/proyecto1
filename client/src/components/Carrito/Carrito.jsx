@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { pagado } from '../../redux/actions'
 import Swal from 'sweetalert2'
@@ -7,7 +7,6 @@ import style from '../Carrito/Carrito.module.css'
 const Carrito = () => {
 
 const infocompra = useSelector(state => state.infocompra)
-console.log(infocompra)
 
 const dispath = useDispatch();
 

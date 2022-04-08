@@ -271,6 +271,17 @@
         align-items: center;
         width: 5rem;
     }
+
+    .contenedirCheckBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-celeste);
+    }
+
+    .contenedirCheckBox span {
+        font-size: 30px;
+    }
     
     .input_filtros {
         display: none;
@@ -293,11 +304,13 @@
     }
 
     .rutasResponsive {
+        position: relative;
         display: flex;
         flex-direction: column;
         list-style: none;
         width: 100%;
         padding: 0;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
     }
 
     .rutasResponsive li {
@@ -353,10 +366,6 @@
 
 /* Modal car vista celular */
 
-.prueba {
-    position: relative;
-}
-
 .modalCar {
     box-sizing: border-box;
     display: flex;
@@ -364,15 +373,16 @@
     align-items: flex-end;
     background-color: rgb(255, 255, 255);
     height: 20rem;
-    min-width: 100%;
+    width: 100%;
     position: absolute;
     right: 0;
-    top: 160px;
+    top: 200px;
     border-radius: 5px;
     border: 1px solid rgb(235, 235, 235);
     overflow: auto;
     animation-name: Prueba;
     animation-duration: 0.3s;
+    padding: 0.5rem;
 }
 
 @keyframes Prueba {
@@ -382,7 +392,6 @@
 
 .carrito {
    position: relative;
-   margin-left: 1rem;
 }
 
 .carrito:hover {
@@ -411,6 +420,10 @@
     height: 100%;
     width: 100%;
     color: rgb(205, 205, 205);
+}
+
+.carritovacio h1 {
+    font-size: 3vh;
 }
 
 .modalCar button {
