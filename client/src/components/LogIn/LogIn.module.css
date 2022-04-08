@@ -1,0 +1,14 @@
+.globalContainer {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.contenedorInputs {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 15rem;
+    border: 1px solid grey;
+    width: 12rem;
+}

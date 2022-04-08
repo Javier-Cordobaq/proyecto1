@@ -57,9 +57,11 @@ export const getById = (_id) => async dispatch => {
 
 }
 
-export const pagado = () => async dispatch => {
+export const pagado = (orden) => async dispatch => {
 
-    const json = await axios.post(`http://localhost:3001/Paypal/create-order`)
+    console.log(orden, 'Orden del front')
+
+    const json = await axios.post(`http://localhost:3001/Paypal/create-order`, orden)
 
     return dispatch({
         type: PAGADO,

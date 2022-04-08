@@ -89,7 +89,7 @@ const Nav = () => {
                           }
                             <div className={Style.comprar}>
                               <p>{`Subtotal: ${bandera.toFixed(2)}`}</p>
-                              <button onClick={() => dispatch(pagado())}>Comprar</button>
+                              <button onClick={() => dispatch(pagado(productosCar))}>Comprar</button>
                             </div>
                             {infocompra !== '' ?
                               Swal.fire({

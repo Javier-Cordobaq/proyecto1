@@ -7,6 +7,7 @@ import Carrito from './components/Carrito/Carrito';
 import CompraEfectiva from './components/CompraEfectiva/CompraEfectiva';
 import SeccionVideo from './components/seccionVideo/SeccionVideo';
 import Detail from './components/Detail/Detail'
+import LogIn from './components/LogIn/LogIn';
 
 function App() {
   function fetchApi() {
@@ -23,7 +24,7 @@ function App() {
 
         <Route exact path='/tienda' element={<Tienda/>} />
 
-        <Route exact path='/subirproducto' element={<SubirProductos/>}/>
+        <Route exact path='/admin' element={<LogIn/>}/>
 
         <Route exact path='/carrito/:_id' element={<Detail/>}/>
 

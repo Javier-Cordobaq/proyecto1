@@ -7,10 +7,12 @@ const HOST = 'http://localhost:3001'
 // const ACCESS_TOKE_PAYPAL = 'A21AAKum_E3qjWFnEWKYDGhjQVp1_6K9VmsjmzoxCyGK8JmMQq-igBEf2i_9D0P82uX_Y8_njEiXKMGvke0m1giyd-W0eYZow'
 const axios = require('axios')
 router.post('/create-order', async (req, res) => {
-  const { orden } = req.body
   try {
+    const orden = req.body
+    console.log(req.body, 'Req Body')
+    console.log(orden, 'Ordend el back')
     // create order
-    const total = orden.map(item => item.price * item.cantidad).reduce((a, b) => a + b, 0)
+    const total = await orden.map(item => item.price * item.cantidad).reduce((a, b) => a + b, 0)
     const order = {
       intent: 'CAPTURE',
       purchase_units: [
