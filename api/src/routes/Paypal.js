@@ -14,27 +14,12 @@ router.post('/create-order', async (req, res) => {
     const order = {
       intent: 'CAPTURE',
       purchase_units: [
-        // desdglozar el objeto orden
         {
           amount: {
             currency_code: 'USD',
             value: total
           },
-          items: [
-            orden.map(item => {
-              return {
-                name: item.name,
-                description: item.description,
-                quantity: item.quantity,
-                category: item.category,
-                unit_amount: {
-                  currency_code: 'USD',
-                  value: item.price
-                }
-              }
-            }
-            )
-          ]
+          desription: 'Compra en Ranger Snacks'
         }
       ],
       application_context: {
