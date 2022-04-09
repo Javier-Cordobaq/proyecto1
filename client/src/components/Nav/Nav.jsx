@@ -89,7 +89,9 @@ const Nav = () => {
                           }
                             <div className={Style.comprar}>
                               <p>{`Subtotal: ${bandera.toFixed(2)}`}</p>
+                              <Link to='/formulariopedido'>
                               <button onClick={() => dispatch(pagado(productosCar))}>Comprar</button>
+                              </Link>
                             </div>
                             {infocompra !== '' ?
                               Swal.fire({

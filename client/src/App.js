@@ -28,8 +28,6 @@ function App() {
 
         <Route exact path='/carrito/:_id' element={<Detail/>}/>
 
-        <Route exact path='/carrito' element={<Carrito/>}/>
-
         <Route exact path='/Pagado' element={<CompraEfectiva/>}/>
 
       </Routes>
