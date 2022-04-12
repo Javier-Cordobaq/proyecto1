@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from "react-dom/client";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -7,7 +7,12 @@ import store from './redux/store';
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
-ReactDOM.render(
+import axios from 'axios';
+axios.defaults.baseURL = process.env.REACT_APP_URL || "http://localhost:9000/";
+
+const root = createRoot(document.getElementById("root"));
+
+root.render(
   <Provider store={store}>
     <BrowserRouter>
       <App />

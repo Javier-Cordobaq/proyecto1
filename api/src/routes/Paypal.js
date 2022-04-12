@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const PAYPAL_API_CLIENT = 'AU-y-eZbnaeVi-C8tQUQWVWBtVVVL1K6QTS6dZtS4ZpXZ_NapXmM4RiAZtIy_KuENpl_BxeWkA9VAvWk'
-const PAYPAL_API_SECRET = 'EO6tp6jSSs7hwsC1gVKSpIJi89m2Wgugbjlxue9EI5UO4pfv5FiCiGmyfAasTp7qJzNd9aVSvHCZ8-hK'
-const PAYPAL_API_URL = 'https://api-m.sandbox.paypal.com'
-const HOST = 'http://localhost:3001'
+const PAYPAL_API_CLIENT = process.env.PAYPAL_API_CLIENT
+const PAYPAL_API_SECRET = process.env.PAYPAL_API_SECRET
+const PAYPAL_API_URL = process.env.PAYPAL_API_URL
+const HOST = process.env.HOST
 // const ACCESS_TOKE_PAYPAL = 'A21AAKum_E3qjWFnEWKYDGhjQVp1_6K9VmsjmzoxCyGK8JmMQq-igBEf2i_9D0P82uX_Y8_njEiXKMGvke0m1giyd-W0eYZow'
 const axios = require('axios')
 router.post('/create-order', async (req, res) => {

@@ -37,7 +37,7 @@ export const cambiarIngles = () => async dispatch => {
 
 export const getProducts = () => async dispatch => {
 
-    const json = await axios.get(`http://localhost:3001/productos`)
+    const json = await axios.get(`/productos`)
 
     return dispatch({
         type: GET_PRODUCTS,
@@ -48,7 +48,7 @@ export const getProducts = () => async dispatch => {
 
 export const getById = (_id) => async dispatch => {
 
-    const json = await axios.get(`http://localhost:3001/productos/${_id}`)
+    const json = await axios.get(`/productos/${_id}`)
 
     return dispatch({
         type: GET_BY_ID,
@@ -61,7 +61,7 @@ export const pagado = (orden) => async dispatch => {
 
     console.log(orden, 'Orden del front')
 
-    const json = await axios.post(`http://localhost:3001/Paypal/create-order`, orden)
+    const json = await axios.post(`/Paypal/create-order`, orden)
 
     return dispatch({
         type: PAGADO,
@@ -72,7 +72,7 @@ export const pagado = (orden) => async dispatch => {
 
 export const postProducts = (producto) => async dispatch => {
 
-    const json = await axios.post(`http://localhost:3001/productos`, producto)
+    const json = await axios.post(`/productos`, producto)
 
     return dispatch({
         type: POST_PRODUCTS,
@@ -93,7 +93,7 @@ export const setMensaje = () => async dispatch => {
 
 export const getTipos = () => async dispatch => {
 
-    const json = await axios.get(`http://localhost:3001/tipos`)
+    const json = await axios.get(`/tipos`)
 
     return dispatch({
         type: GET_TIPOS,
@@ -104,7 +104,7 @@ export const getTipos = () => async dispatch => {
 
 export const postUsuarios = (info) => async dispatch => {
 
-    const json = await axios.post(`http://localhost:3001/usuarios`, info)
+    const json = await axios.post(`/usuarios`, info)
 
     return dispatch({
         type: POST_USUARIOS,
