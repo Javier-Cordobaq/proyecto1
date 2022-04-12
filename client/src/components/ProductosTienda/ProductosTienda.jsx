@@ -1,14 +1,13 @@
 import React from 'react'
-import Logo from '../../Imagenes/LogoRangers.png'
 import style from './ProductosTienda.module.css'
 import { Link } from 'react-router-dom'
 import { addToCar } from '../../redux/actions'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 export default function ProductosTienda({productos, filtrar}){
     
     const dispatch = useDispatch();
-    const carrito = useSelector(state => state.carrito)
+   /*  const carrito = useSelector(state => state.carrito) */
 
 /*     const agregarCantidad = (producto) => {
         const product = carrito.filter(c => c._id === producto._id)

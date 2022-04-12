@@ -34,7 +34,7 @@ const SeccionCarrusel = () => {
          >
 
             {
-            array.map(c => <div className={style.item}><img src={c.img} /></div>) 
+            array.map(c => <div className={style.item}><img src={c.img} alt='' /></div>) 
             }
          
         </Slider>

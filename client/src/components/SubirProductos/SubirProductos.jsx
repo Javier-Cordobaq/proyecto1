@@ -17,7 +17,6 @@ const SubirProductos = () => {
 
 /* Cloudinary */
 
-  const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
 
   const uploadImage = async (e) => {
@@ -41,7 +40,6 @@ const SubirProductos = () => {
     setLoading(false);
   };
 
-  const [image2, setImage2] = useState("");
   const [loading2, setLoading2] = useState(false);
 
   const uploadImageNutricional = async (e) => {
@@ -90,11 +88,6 @@ useEffect(() => {
         setEnviado(false)
     }
 }, [mensaje, enviado])
-
-  const [errores, setErrores] = useState({
-      error: false,
-      mensaje: ''
-  })
   
   const [state, setState] = useState({
     type: '',     
@@ -132,27 +125,23 @@ const tipo = tipos.filter((c) => {
                 <div className={styles.nombre}>
                   <div className={styles.uno}>
                     <TextField
-                    error={errores.error}
                     id="outlined-error-helper-text"
                     label="Nombre"
                     defaultValue=""
                     value={state.name}
                     name='name'
-                    helperText={errores.mensaje}
                     onChange={handleChange}
                     fullWidth
                     />
                   </div>
                   <div className={styles.dos}>
                     <TextField
-                    error={errores.erro}
                     id="outlined-error-helper-text"
                     label="Precio"
                     defaultValue=""
                     type='number'
                     value={state.price}
                     name='price'
-                    helperText={errores.mensaje}
                     onChange={handleChange}
                     fullWidth
                     />    
@@ -161,7 +150,6 @@ const tipo = tipos.filter((c) => {
 
                 <div className={styles.prueba}>
                     <TextField
-                    error={errores.erro}
                     id="outlined-error-helper-text"
                     label="Descripción"
                     defaultValue=""
@@ -171,7 +159,6 @@ const tipo = tipos.filter((c) => {
                     maxRows={3}
                     value={state.detalle}
                     name='detalle'
-                    helperText={errores.mensaje}
                     onChange={handleChange}
                     fullWidth
                     />
