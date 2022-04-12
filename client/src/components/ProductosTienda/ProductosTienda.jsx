@@ -61,24 +61,22 @@ export default function ProductosTienda({productos, filtrar}){
                 
                 filtrar?.map(snack => (
 
-                    <Link to={`/carrito/${snack._id}`}>
                     <div className={style.producto}>
-                        <div className={style.img}>
-                            <img src={snack.image} alt="Imagen del producto no encontrada"/>
-                            <button className={style.mor}>Seleccionar opciones</button>
-                        </div>
-                        <div className={style.comprar}>
-                            <p className={style.tipo}>{snack.type.name}</p>
-                            <div className={style.botton}>
-                                <p>{snack.name}</p>
-                                <button onClick={() => {agregarCarrito(snack)}}><span class="material-icons-round">add_shopping_cart</span>Agregar</button> 
-                            </div>
-                            <p className={style.precio}>$ {snack.price}</p>
-                        </div>
-                        
-
+                    <Link to={`/carrito/${snack._id}`}> 
+                    <div className={style.img}>
+                        <img src={snack.image} alt="Imagen del producto no encontrada"/>
+                        <button className={style.mor}>Seleccionar opciones</button>
                     </div>
-                    </Link>
+                    </Link> 
+                    <div className={style.comprar}>
+                        <p className={style.tipo}>{snack.type.name}</p>
+                        <div className={style.botton}>
+                            <p>{snack.name}</p>
+                            <button onClick={() => {agregarCarrito(snack)}}><span class="material-icons-round">add_shopping_cart</span>Agregar</button> 
+                        </div>
+                        <p className={style.precio}>$ {snack.price}</p>
+                    </div>
+                </div>
                 ))
 
                 }     

@@ -40,7 +40,7 @@ const Nav = () => {
 
                    <ul className={Style.rutas}>
                    <li><Link to='/'>Home</Link></li>
-                   <li><Link to='/tienda'>Tienda</Link></li>  
+                   <li><Link to='/tienda'>{idioma === "español" ? "Tienda" : "Shop"}</Link></li>  
 
                     <div className={Style.contenedorModalCarrito}>        
                         <label>
@@ -113,7 +113,7 @@ const Nav = () => {
                     <li><a href='#acerca'>{idioma === "español" ? "Acerca de" : "About"}</a></li>
                     <li><a href='#Bruss'>Bruss</a></li>
                     <li><a href='#productos'>{idioma === "español" ? "Productos" : "Products"}</a></li>
-                    <li>{idioma === "español" ? "Puntos de venta" : "Points of sale"}</li>
+                    <li><a href='#puntos'>{idioma === "español" ? "Puntos de venta" : "Points of sale"}</a></li>
                     <li><Link to='/tienda'>{idioma === "español" ? "Tienda" : "Shop"}</Link></li>
                   </ul>
 
@@ -176,7 +176,7 @@ const Nav = () => {
                     {ruta !== home ?
                      <ul className={Style.rutasResponsive}>
                       <Link to='/'><li>Home</li></Link>
-                      <Link to='/tienda'><li>Tienda</li></Link>  
+                      <Link to='/tienda'><li>{idioma === "español" ? "Tienda" : "Shop"}</li></Link>  
                       <li>
                       <div className={Style.contenedirCheckBox}>        
                         <label>
@@ -241,7 +241,7 @@ const Nav = () => {
                               <Link to='/'><li>{idioma === "español" ? "Acerca de" : "About"}</li></Link>
                               <a href='#Bruss'><li>Bruss</li></a>
                               <a href='#productos'><li>{idioma === "español" ? "Productos" : "Products"}</li></a>
-                              <li>{idioma === "español" ? "Puntos de venta" : "Points of sale"}</li>
+                              <a href='#puntos'><li>{idioma === "español" ? "Puntos de venta" : "Points of sale"}</li></a>
                               <Link to='/tienda'><li>{idioma === "español" ? "Tienda" : "Shop"}</li></Link>
                     </ul>
                     }

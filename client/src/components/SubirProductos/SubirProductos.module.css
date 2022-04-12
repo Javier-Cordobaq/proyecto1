@@ -2,28 +2,24 @@
     display: grid;
     place-items: center;
     min-height: 100vh;
-    background-color: var(--color-azul);
+    background: #f0f0f1;
 }
 
 .inputs {
-    width: 40%;
+    min-width: 50%;
+    max-width: 50%;
     box-sizing: border-box;
     padding: 2rem;
+    border-right: 1px solid #c3c4c7;
 }
 
 .inputs h2 {
-    color: var(--color-blanco);
-    margin-bottom: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .inputs .prueba {
     margin-bottom: 1.5rem;
-}
-
-.imagen {
-   background-color: aliceblue;
-    width: 60%;
-    height: 100%;
 }
 
 .formControl {
@@ -31,12 +27,18 @@
 }
 
 .nombre {
+    width: 100%;
     display: flex;
     margin: 1.5rem 0;
 }
 
 .nombre .uno {
     margin-right: 1rem;
+    width: 50%;
+}
+
+.nombre .dos {
+    width: 50%;
 }
 
 .botonSubir {
@@ -57,52 +59,74 @@
 
 .contCentrado {
     display: flex;
-    background-color: var(--color-celeste);
+    background-color: var(--color-blanco);
     height: 90%;
     width: 70%;
     border-radius: 10px;
     overflow: hidden;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 4%);
 }
 
 /* Estilos card producto */
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-blanco);
+    min-width: 50%;
+    max-width: 50%;
+    overflow: auto;
+    height: 100%;
+}
 
 .producto {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    box-sizing: border-box;
+    margin: 1rem;
 }
 
-.img{
-    width: 50%;
-    height: 50%;
-    background-color: rgb(188, 188, 188);
-    border-radius: 10px;
-}
-
-.imgSinfondo {
+.img {
+    min-width: 20rem;
+    max-width: 20rem;
+    min-height: 20rem;
+    max-height: 20rem;
     position: relative;
     display: flex;
     justify-content: center;
-    width: 50%;
-    height: 50%;
-    border-radius: 10px;
-    background-color: blue;
+    width: 100%;
+    transition: 0.4s all;
 }
 
-.imgSinfondo img {
-    object-fit: contain;
-    max-height: 100%;
-    max-width: 100%;
-    transition: 0.3s all;
+.producto:hover .mor {
+    opacity: 100%;
+    display: flex;
+    background-color: var(--color-celeste);
+    color: var(--color-blanco);
+    border: none;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.img button {
+    position: absolute;
+    top: 50%;
+    display: none;
 }
 
 .img img {
     object-fit: contain;
-    max-height: 100%;
-    max-width: 100%;
+    width: 100%;
+    transition: 0.3s all;
+}
+
+.producto:hover img {
+    opacity: 20%;
 }
 
 .comprar{
@@ -115,10 +139,13 @@
 }
 
 .comprar button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: var(--color-celeste);
     border: none;
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 7px 15px 7px 10px;
     font-weight: 500;    
     color: var(--color-blanco);
     font-size: 2vh;
@@ -127,8 +154,36 @@
     transition: 0.3s all ease-in-out;
 }
 
+.comprar button span {
+    background: var(--color-azul);
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: 0.3s all ease-in-out;
+}
+
+.comprar button:hover span {
+    background: var(--color-celeste);
+} 
+
 .comprar button:hover {
     background-color: var(--color-azul);
+    cursor: pointer;
+}
+
+.tipo {
+    text-transform: uppercase;
+    font-size: 2vh;
+    color: rgb(162, 162, 162);
+    margin-bottom: 1rem;
+}
+
+.precio {
+    font-weight: 600;
+    font-size: 2.5vh;
+    color: rgb(102, 102, 102);
+    margin-top: 0.5rem;
 }
 
 .botton {
@@ -136,15 +191,21 @@
     align-items: center;
     justify-content:center ;
     width: 100%;
-    height: 80px;
+    height: auto;
     text-overflow: ellipsis;
 }
 
+.producto:hover .botton p {
+    color: var(--color-celeste);
+} 
+
 .botton p {
-    font-size: 2.5vh;
+    color: black;
+    font-size: 2vh;
     white-space: nowrap;
     overflow: hidden;
     text-transform: uppercase;
+    transition: 0.3s all;
     font-weight: bold;
 }
 
@@ -160,4 +221,61 @@
     color: var(--color-azul);
     font-weight: bold;
     background: none;
+}
+
+.ImagenVacio {
+    min-width: 20rem;
+    min-height: 20rem;
+    background-color: rgb(212, 212, 212);
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px){
+    .contCentrado {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 70%;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #c3c4c7;
+    }
+
+    .inputs {
+        min-width: 100%;
+    }
+
+    .imagen {
+        min-width: 100%;
+        max-width: 100%;
+        overflow: auto;
+    }
+
+    .ImagenVacio {
+        min-width: 12rem;
+        min-height: 12rem;
+        background-color: rgb(212, 212, 212);
+        border-radius: 10px;
+    }
+
+    .inputs {
+        border-right: none;
+        border-bottom: 1px solid #c3c4c7;
+    }
+
+    .img {
+        min-width: 15rem;
+        max-width: 15rem;
+        min-height: 15rem;
+        max-height: 15rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        transition: 0.4s all;
+    }
 }

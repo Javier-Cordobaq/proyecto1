@@ -4,14 +4,11 @@ import TextField from '@mui/material/TextField';
 import { getTipos, postProducts, setMensaje } from '../../redux/actions'; 
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2'
-import { Link } from 'react-router-dom'
 
 /* Imports Material UI */
 
-import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { Button } from '@material-ui/core';
@@ -169,6 +166,9 @@ const tipo = tipos.filter((c) => {
                     label="Descripción"
                     defaultValue=""
                     type='text'
+                    multiline
+                    minRows={3}
+                    maxRows={3}
                     value={state.detalle}
                     name='detalle'
                     helperText={errores.mensaje}
@@ -251,27 +251,20 @@ const tipo = tipos.filter((c) => {
 
                 <div className={styles.imagen}>
 
-                    <div className={styles.producto}>
-                      <div className={`${state.image === '' ? styles.img : styles.imgSinfondo}`}>
-                        <img className={styles.prueba} src={state.image} alt=""/>
-                      </div>
+                      <div className={styles.producto}>
+                        <div className={`${state.image === '' ? styles.ImagenVacio : styles.img}`}>
+                            <img src={state.image} alt=""/>
+                            <button className={`${state.image === '' ? styles.hidden : styles.mor}`}>Seleccionar opciones</button>
+                        </div> 
                         <div className={styles.comprar}>
-                        <p>$ {state.price}</p>
+                            <p className={styles.tipo}>{tipo.length !== 0 ? tipo[0].name : null}</p>
                             <div className={styles.botton}>
                                 <p>{state.name}</p>
-                                <button>+<span class="material-icons-round">shopping_cart</span></button>
+                                <button><span class="material-icons-round">add_shopping_cart</span>Agregar</button> 
                             </div>
-                            <p>{tipo.length !== 0 ? tipo[0].name : null}</p>
-                      </div>
-                        
-
-                    </div>                       
-
-                   {/*    {loading ? 
-                        <h3>Cargando imagen...</h3>
-                       : 
-                        <img src={state.image} styles={{ width: "300px" }} />
-                      } */}
+                            <p className={styles.precio}>$ {state.price}</p>
+                        </div>
+                    </div>                          
 
                 </div>  
 

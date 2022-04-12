@@ -1,24 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import Nav from '../Nav/Nav'
-import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import style from '../Tienda/Tienda.module.css'
 import TextField from '@mui/material/TextField';
 import ProductosTienda from '../ProductosTienda/ProductosTienda';
-import snack1 from '../../Imagenes/snack1.png'
-import snack2 from '../../Imagenes/snack2.png'
-import snack3 from '../../Imagenes/snack3.png'
-import Checkbox from '@mui/material/Checkbox';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../../redux/actions';
 
 const Tienda = () => {
 
   const dispatch = useDispatch();
+
+  const idioma = useSelector(state => state.idioma)
 
   useEffect(() => {
     dispatch(getProducts())
@@ -88,7 +81,7 @@ const Tienda = () => {
         <div className={style.filtros}>
 
           <div className={style.buscarInput}>
-            <h2>Buscar</h2>
+            <h2>{idioma === "español" ? "Buscar" : "Search"}</h2>
             <form onSubmit={handleSumbit}>
             <TextField
               error={error}
@@ -103,7 +96,7 @@ const Tienda = () => {
           </div>
 
             <form onSubmit={handlePrice} className={style.contxPrecio}>
-              <h2>Filtrar por precio</h2>
+              <h2>{idioma === "español" ? "Filtrar por precio" : "Filter by price"}</h2>
                   <Slider
                     aria-label="Temperature"
                     defaultValue={0}
@@ -115,13 +108,13 @@ const Tienda = () => {
                     max={20}
                   />
                 <div className={style.precioBoton}>
-                  <p>{`PRECIO: $0 - $${slider}`}</p>
-                  <button>Filtrar</button>
+                  <p>{idioma === "español" ? "PRECIO $0 - " : "PRICE $0 - "} ${slider}</p>
+                  <button>{idioma === "español" ? "Filtrar" : "Filter"}</button>
                 </div>
             </form>
 
           <div className={style.categorias}>
-            <h2>Categorias</h2>
+            <h2>{idioma === "español" ? "Categorias" : "Categories"}</h2>
             <div>
                   <h3 onClick={()=> handleTipos('MERCHANDISING')} className={`${state === 'MERCHANDISING'  ? style.check_sskill  : style.uncheck_sskill }`}>MERCHANDISING</h3>
             </div>

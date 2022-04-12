@@ -8,6 +8,7 @@ import SeccionProductos from '../SeccionProductos/SeccionProductos';
 import style from '../LandingPrincipal/LandingPrincipal.module.css'
 import Footer from '../Footer/Footer'
 import Suscribirse from '../Suscribirse/Suscribirse';
+import SeccionCarrusel from '../SeccionCarrusel/SeccionCarrusel';
 
 const LandingPrincipal = () => {
   return (
@@ -17,6 +18,7 @@ const LandingPrincipal = () => {
       <div><SeccionAmarilla/></div>
       <div><SeccionImagenes/></div>
       <div><SeccionVideo/></div>
+      <SeccionCarrusel/>
       <div><SeccionProductos/></div>
       <div><Suscribirse/></div>
       <div><Footer/></div>
