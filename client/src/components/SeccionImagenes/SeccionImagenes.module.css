@@ -36,13 +36,14 @@
 
 .imagenLeft {
     display: flex;
+    background-color: rgb(230, 230, 230);
     justify-content: center;
     align-items: center;
     min-height: 60%;
     width: 100%;
     overflow: hidden;
     border-radius: 20px;
-    background-image: url('../../Imagenes/TorrePalomitas.png');
+    background-image: url('../../Imagenes/TorrePalomitas.webp');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -54,8 +55,8 @@
     width: 100%;
     overflow: hidden;
     border-radius: 20px;
-    background-color: aqua;
-    background-image: url('../../Imagenes/Paquetes.png');
+    background-color: rgb(230, 230, 230);
+    background-image: url('../../Imagenes/Paquetes.webp');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -112,7 +113,7 @@
         width: 100%;
         overflow: hidden;
         border-radius: 20px;
-        background-image: url('../../Imagenes/TorrePalomitas.png');
+        background-image: url('../../Imagenes/TorrePalomitas.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -124,7 +125,7 @@
         overflow: hidden;
         border-radius: 20px;
         background-color: aqua;
-        background-image: url('../../Imagenes/Paquetes.png');
+        background-image: url('../../Imagenes/Paquetes.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -184,7 +185,7 @@
         width: 100%;
         overflow: hidden;
         border-radius: 20px;
-        background-image: url('../../Imagenes/TorrePalomitas.png');
+        background-image: url('../../Imagenes/TorrePalomitas.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -196,7 +197,7 @@
         overflow: hidden;
         border-radius: 20px;
         background-color: aqua;
-        background-image: url('../../Imagenes/Paquetes.png');
+        background-image: url('../../Imagenes/Paquetes.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

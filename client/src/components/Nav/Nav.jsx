@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Style from '../Nav/Nav.module.css'
 import Logo from '../../Imagenes/LogoRangers.png'
+import LogoCelular from '../../Imagenes/Rangers.png'
 import { Link } from 'react-router-dom'
 import { cambiarIngles,pagado } from '../../redux/actions'
 import face from '../../Imagenes/facebook.svg'
@@ -143,8 +144,67 @@ const Nav = () => {
               <div className={Style.menuGlobal}>
 
                 <div className={Style.LogoResponsive}>
-                        <img src={Logo} alt='Logo not Found'/>
+                        <img src={LogoCelular} alt='Logo not Found'/>
                 </div>
+
+                {/* Este es un dic que envuelve las dos modales para celular */}
+
+                <div className={Style.contenedorModales}>
+
+                {/* Aquí va la modal y logica del carrito del navBar cuando esta en modo celular */}
+
+                <div className={Style.contenedirCheckBox}>        
+                          <label>
+                              <input 
+                              className={Style.input_filtros}
+                              type='checkbox'
+                              onChange={(c) => {setCarrito(c.target.checked)}}
+                              />
+                              {carrito === false ? 
+                                <div className={Style.carrito}>
+                                  <span class="material-icons">
+                                  shopping_cart
+                                  </span>
+                                  {cantidad !== 0 ? <p>{cantidad}</p> : null}
+                                </div>
+                              :
+                                <div className={Style.carrito}>
+                                  <span class="material-icons-outlined">
+                                  shopping_cart
+                                  </span>
+                                  {cantidad !== 0 ? <p>{cantidad}</p> : null}
+                                </div>
+                              }
+                          </label>
+                          {carrito === false ? null
+                          :
+                          <div className={Style.modalCar}>
+                            {
+                              productosCar.map((c, index) => 
+                              <CardCarrito
+                              key={index}
+                              name={c.name}
+                              image={c.image}
+                              price={c.price}
+                              _id={c._id}
+                              cantidad={c.cantidad}
+                              />)
+                            }
+                            {
+                              productosCar.length === 0 ?
+                              <div className={Style.carritovacio}>
+                              <h1>Aun no tienes productos!</h1>
+                              </div>
+                              :
+                              null
+                            }
+                              <div className={Style.comprar}>
+                                <p>{`Subtotal: ${bandera.toFixed(2)}`}</p>
+                                <button onClick={() => dispatch(pagado())}>Comprar</button>
+                              </div>
+                          </div> 
+                          }
+                      </div> 
 
                 <div className={Style.filtros_cont}>        
                         <label>
@@ -177,65 +237,8 @@ const Nav = () => {
                      <ul className={Style.rutasResponsive}>
                       <Link to='/'><li>Home</li></Link>
                       <Link to='/tienda'><li>{idioma === "español" ? "Tienda" : "Shop"}</li></Link>  
-                      <li>
-                      <div className={Style.contenedirCheckBox}>        
-                        <label>
-                            <input 
-                            className={Style.input_filtros}
-                            type='checkbox'
-                            onChange={(c) => {setCarrito(c.target.checked)}}
-                            />
-                            {carrito === false ? 
-                         
-                               <div className={Style.carrito}>
-                               <span class="material-icons">
-                               shopping_cart
-                               </span>
-                               {cantidad !== 0 ? <p>{cantidad}</p> : null}
-                             </div>
-                             
-                            :
-                            
-                            <div className={Style.carrito}>
-                            <span class="material-icons-outlined">
-                            shopping_cart
-                            </span>
-                            {cantidad !== 0 ? <p>{cantidad}</p> : null}
-                          </div>
-                         
-                            }
-                        </label>
-                        {carrito === false ? null
-                        :
-                        <div className={Style.modalCar}>
-                          {
-                            productosCar.map((c, index) => 
-                            <CardCarrito
-                            key={index}
-                            name={c.name}
-                            image={c.image}
-                            price={c.price}
-                            _id={c._id}
-                            cantidad={c.cantidad}
-                            />)
-                          }
-                          {
-                            productosCar.length === 0 ?
-                            <div className={Style.carritovacio}>
-                            <h1>Aun no tienes productos!</h1>
-                            </div>
-                            :
-                            null
-                          }
-                            <div className={Style.comprar}>
-                              <p>{`Subtotal: ${bandera.toFixed(2)}`}</p>
-                              <button onClick={() => dispatch(pagado())}>Comprar</button>
-                            </div>
-                        </div> 
-                        }
-                    </div>  
-                    </li>
-                    </ul>
+                    </ul> 
+                     
                     :
                     <ul className={Style.rutasResponsive}>
                               <Link to='/'><li>{idioma === "español" ? "Acerca de" : "About"}</li></Link>
@@ -253,7 +256,7 @@ const Nav = () => {
            
         </div>
 
-        {/* Modal productos carrito */}
+        </div>
 
     </div>
   )

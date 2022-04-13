@@ -1,7 +1,5 @@
 import React from 'react'
 import style from '../SeccionImagenes/SeccionImagenes.module.css'
-import imagenLeft from '../../Imagenes/TorrePalomitas.png'
-import imagenRight from '../../Imagenes/Paquetes.png'
 import { useSelector } from 'react-redux'
 
 
