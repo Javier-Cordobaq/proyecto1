@@ -149,10 +149,11 @@ const Nav = () => {
 
                 {/* Este es un dic que envuelve las dos modales para celular */}
 
-                <div className={Style.contenedorModales}>
+                <div className={Style.contenedroLogosModal}>
 
                 {/* Aquí va la modal y logica del carrito del navBar cuando esta en modo celular */}
 
+                {ruta === home ? null : 
                 <div className={Style.contenedirCheckBox}>        
                           <label>
                               <input 
@@ -176,7 +177,57 @@ const Nav = () => {
                                 </div>
                               }
                           </label>
-                          {carrito === false ? null
+                      </div>}
+
+                {/* Aquí va el logito (checkbox) */}
+
+                <div className={Style.filtros_cont}>        
+                        <label>
+                            <input 
+                            className={Style.input_filtros}
+                            type='checkbox'
+                            onChange={(c) => {setMenu(c.target.checked)}}
+                            />
+                            {menu === false ? 
+                            <span className={`material-icons-outlined ${Style.slider}`}>
+                            menu
+                            </span>
+                            :
+                            <span className="material-icons-outlined">
+                            clear_all
+                            </span>}                   
+                        </label>
+                </div>  
+
+                {/* ------------------------------ */}
+
+              </div>
+
+              {/* Modal menu hamburguesa */}
+
+              {/*<div>*/}
+                  {menu === false ? null : 
+                    ruta !== home ?
+                     <ul className={Style.rutasResponsive}>
+                      <Link to='/'><li>Home</li></Link>
+                      <Link to='/tienda'><li>{idioma === "español" ? "Tienda" : "Shop"}</li></Link>  
+                    </ul> 
+                     
+                    :
+                    <ul className={Style.rutasResponsive}>
+                              <Link to='/'><li>{idioma === "español" ? "Acerca de" : "About"}</li></Link>
+                              <a href='#Bruss'><li>Bruss</li></a>
+                              <a href='#productos'><li>{idioma === "español" ? "Productos" : "Products"}</li></a>
+                              <a href='#puntos'><li>{idioma === "español" ? "Puntos de venta" : "Points of sale"}</li></a>
+                              <Link to='/tienda'><li>{idioma === "español" ? "Tienda" : "Shop"}</li></Link>
+                    </ul>}
+              {/*</div>*/}
+
+                {/* ----------------------- */}
+
+                {/* Modal carrito vista movil */}
+
+                {carrito === false ? null
                           :
                           <div className={Style.modalCar}>
                             {
@@ -204,58 +255,13 @@ const Nav = () => {
                               </div>
                           </div> 
                           }
-                      </div> 
 
-                <div className={Style.filtros_cont}>        
-                        <label>
-                            <input 
-                            className={Style.input_filtros}
-                            type='checkbox'
-                            onChange={(c) => {setMenu(c.target.checked)}}
-                            />
-                            {menu === false ? 
-                            <span className={`material-icons-outlined ${Style.slider}`}>
-                            menu
-                          </span>
-                          :
-                          <span className="material-icons-outlined">
-                          clear_all
-                          </span>
-                            }
-                        
-                        </label>
-
-                </div>  
-
+                  {/* ----------------------- */}
 
               </div>
-
-                <div>
-                  {menu === false ? null : 
-                  <div className={Style.prueba}>
-                    {ruta !== home ?
-                     <ul className={Style.rutasResponsive}>
-                      <Link to='/'><li>Home</li></Link>
-                      <Link to='/tienda'><li>{idioma === "español" ? "Tienda" : "Shop"}</li></Link>  
-                    </ul> 
-                     
-                    :
-                    <ul className={Style.rutasResponsive}>
-                              <Link to='/'><li>{idioma === "español" ? "Acerca de" : "About"}</li></Link>
-                              <a href='#Bruss'><li>Bruss</li></a>
-                              <a href='#productos'><li>{idioma === "español" ? "Productos" : "Products"}</li></a>
-                              <a href='#puntos'><li>{idioma === "español" ? "Puntos de venta" : "Points of sale"}</li></a>
-                              <Link to='/tienda'><li>{idioma === "español" ? "Tienda" : "Shop"}</li></Link>
-                    </ul>
-                    }
-                  </div>
-                  }
-                </div> 
 
               </div>
            
-        </div>
-
         </div>
 
     </div>

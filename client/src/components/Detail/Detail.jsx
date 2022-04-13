@@ -13,7 +13,6 @@ const Detail = () => {
     }, [])
 
     const {_id} = useParams();
-    console.log(_id, 'Id detail')
 
     const detail = useSelector(c => c.detail)
 

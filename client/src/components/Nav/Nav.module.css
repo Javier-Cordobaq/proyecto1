@@ -130,13 +130,15 @@
 /* Estios modal car */
 
 .modalCar {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     background-color: rgb(255, 255, 255);
     height: 20rem;
+    width: 33rem;
     position: absolute;
-    top: 110px;
+    top: 6.5rem;
     right: 50px;
     border-radius: 5px;
     border: 1px solid rgb(235, 235, 235);
@@ -246,6 +248,7 @@
         flex-direction: column;
         width: 100%;
         min-height: 100%;
+        position: relative;
     }
 
     .menuGlobal {
@@ -290,36 +293,20 @@
     }
 
     .prueba {
-        height: 100%;
-        width: 100%;
-        background-color: var(--color-blanco);
+        background-color: var(--color-azul);
     }
 
     .rutasResponsive {
-      /*   position: relative;
+        position: absolute;
+        left: 0;
+        top: 6rem;
         display: flex;
         flex-direction: column;
         list-style: none;
         width: 100%;
-        padding: 0; */
+        padding: 0;
+        background-color: var(--color-blanco);
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        background-color: rgb(255, 255, 255);
-        height: 20rem;
-        width: 100%;
-        position: absolute;
-        right: 0;
-        top: 200px;
-        border-radius: 5px;
-        border: 1px solid rgb(235, 235, 235);
-        overflow: auto;
-        animation-name: Prueba;
-        animation-duration: 0.3s;
-        padding: 0.5rem;
     }
 
     .rutasResponsive li {
@@ -375,6 +362,7 @@
 /* Modal car vista celular */
 
 .modalCar {
+    position: absolute;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -382,10 +370,9 @@
     background-color: rgb(255, 255, 255);
     height: 20rem;
     width: 100%;
-    position: absolute;
     right: 0;
-    top: 200px;
-    border-radius: 5px;
+    top: 6rem;
+    border-radius: 0px;
     border: 1px solid rgb(235, 235, 235);
     overflow: auto;
     animation-name: Prueba;
@@ -461,9 +448,8 @@
     font-weight: bold;
 }
 
-.contenedorModales {
-    display: flex;
-    height: 100%;
+.contenedroLogosModal {
+    display: flex
 }
 
 }; 
