@@ -1,3 +1,7 @@
+.prueba {
+    display: flex;
+}
+
 .flex {
     display: flex;
     align-items: center;
