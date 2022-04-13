@@ -10,7 +10,10 @@ const SeccionImagenes = () => {
     const idioma = useSelector(state => state.idioma)
 
   return (
-    <div className={style.containerWidth}>
+    <div className={style.container}>
+
+    <div className={style.prueba}>
+
         <div className={style.globalContainer}>
             <div data-aos="zoom-in-right" data-aos-duration="1100" className={style.contenedorLeft}>
                 <div className={style.imagenLeft}>
@@ -52,6 +55,9 @@ const SeccionImagenes = () => {
              
             </div>
         </div>
+
+        </div>
+
     </div>
   )
 }
