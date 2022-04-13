@@ -1,5 +1,6 @@
 .prueba {
     display: flex;
+    min-width: 100%;
 }
 
 .flex {
