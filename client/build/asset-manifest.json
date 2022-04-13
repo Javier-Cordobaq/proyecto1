@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.710817a3.css",
-    "main.js": "./static/js/main.72c1a79d.js",
+    "main.js": "./static/js/main.3669a036.js",
     "static/js/787.b0807e75.chunk.js": "./static/js/787.b0807e75.chunk.js",
     "static/media/TorrePalomitas.png": "./static/media/TorrePalomitas.92afd29605cf03124221.png",
     "static/media/Paquetes.png": "./static/media/Paquetes.8f32cabeaddd86c2bd55.png",
@@ -25,11 +25,11 @@
     "static/media/instagram.svg": "./static/media/instagram.ae0283c0ac64a806d76bdc338f34d16c.svg",
     "static/media/facebook.svg": "./static/media/facebook.58c41f7a0b3533c0e5317e48ffcf871d.svg",
     "main.710817a3.css.map": "./static/css/main.710817a3.css.map",
-    "main.72c1a79d.js.map": "./static/js/main.72c1a79d.js.map",
+    "main.3669a036.js.map": "./static/js/main.3669a036.js.map",
     "787.b0807e75.chunk.js.map": "./static/js/787.b0807e75.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.710817a3.css",
-    "static/js/main.72c1a79d.js"
+    "static/js/main.3669a036.js"
   ]
 }
