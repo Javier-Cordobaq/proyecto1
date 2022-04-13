@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     max-width: 100%;
-    min-height: 6rem;
+    height: 6rem;
     color: grey;
     margin: 5px;
     border: 1px solid rgb(199, 199, 199);
