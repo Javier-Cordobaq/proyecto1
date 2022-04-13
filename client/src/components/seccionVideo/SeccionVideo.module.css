@@ -57,7 +57,7 @@
     height: 60px;
     border-radius: 5px;
     margin-top: 15%;
-    font-size:25px;
+    font-size:3vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,7 +75,7 @@
 
 .botonConocer span{
     font-size:45px;
-    margin-right: 20%;
+    margin-right: 15%;
     transition: 0.5s all ease-in-out;
 }
 
