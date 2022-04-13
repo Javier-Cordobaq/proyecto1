@@ -9,7 +9,6 @@ const CardCarrito = ({name, price, image, _id, cantidad}) => {
 
   return (
     <div className={style.flex}>
-        <div className={style.globalCont}>
             <div onClick={() => {dispatch(deleteFromCar(_id))}} className={style.delete}>
                 <span class="material-icons">
                     clear
@@ -30,7 +29,6 @@ const CardCarrito = ({name, price, image, _id, cantidad}) => {
             <div className={style.price}>
                 <p>$ {(price * cantidad).toFixed(2)}</p>
             </div>
-        </div>
     </div>
   )
 }
