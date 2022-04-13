@@ -1,3 +1,7 @@
+.flex {
+    display: flex;
+}
+
 .globalCont {
     display: flex;
     align-items: center;

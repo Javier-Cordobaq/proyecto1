@@ -231,6 +231,11 @@ const Nav = () => {
                           :
                           <div className={Style.modalCar}>
                             {
+                              productosCar.length === 0 ?
+                              <div className={Style.carritovacio}>
+                              <h1>Aun no tienes productos!</h1>
+                              </div>
+                              :
                               productosCar.map((c, index) => 
                               <CardCarrito
                               key={index}
@@ -239,22 +244,14 @@ const Nav = () => {
                               price={c.price}
                               _id={c._id}
                               cantidad={c.cantidad}
-                              />)
-                            }
-                            {
-                              productosCar.length === 0 ?
-                              <div className={Style.carritovacio}>
-                              <h1>Aun no tienes productos!</h1>
-                              </div>
-                              :
-                              null
+                              />)                       
                             }
                               <div className={Style.comprar}>
                                 <p>{`Subtotal: ${bandera.toFixed(2)}`}</p>
                                 <button onClick={() => dispatch(pagado())}>Comprar</button>
                               </div>
                           </div> 
-                          }
+                  }
 
                   {/* ----------------------- */}
 

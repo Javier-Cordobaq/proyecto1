@@ -131,9 +131,9 @@
 
 .modalCar {
     box-sizing: border-box;
-    display: flex;
+/*     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-end; */
     background-color: rgb(255, 255, 255);
     height: 20rem;
     width: 33rem;
@@ -216,8 +216,9 @@
 }
 
 .comprar {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
