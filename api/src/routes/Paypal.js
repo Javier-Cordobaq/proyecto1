@@ -7,7 +7,7 @@ const HOST = process.env.HOST
 // const ACCESS_TOKE_PAYPAL = 'A21AAKum_E3qjWFnEWKYDGhjQVp1_6K9VmsjmzoxCyGK8JmMQq-igBEf2i_9D0P82uX_Y8_njEiXKMGvke0m1giyd-W0eYZow'
 const axios = require('axios')
 router.post('/create-order', async (req, res) => {
-  const orden  = req.body
+  const orden = req.body
   try {
     // create order
     const total = orden.map(item => item.price * item.cantidad).reduce((a, b) => a + b, 0)
