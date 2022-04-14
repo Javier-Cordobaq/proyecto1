@@ -48,7 +48,7 @@ const Suscribirse = () => {
           />
 
           <input
-            placeholder="E-mail"
+            placeholder={idioma === "español" ? "Correo" : "Email"}
             type="text"
             value={state.email}
             name="email"

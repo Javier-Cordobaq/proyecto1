@@ -8,14 +8,20 @@ import CompraEfectiva from './components/CompraEfectiva/CompraEfectiva';
 import SeccionVideo from './components/seccionVideo/SeccionVideo';
 import Detail from './components/Detail/Detail'
 import LogIn from './components/LogIn/LogIn';
+import { useSelector } from 'react-redux';
 
 function App() {
+
+const login = useSelector(c => c.login)
+console.log(login, 'App')
+
   function fetchApi() {
     fetch('http://localhost:3001/')
       .then(response => response.json())
-      .then(data => console.log(data))
+      /* .then(data => console.log(data)) */
   }
   fetchApi()
+
   return (
     <div className="App">  
       <Routes>
@@ -24,11 +30,9 @@ function App() {
 
         <Route exact path='/tienda' element={<Tienda/>} />
 
-        <Route exact path='/admin' element={<LogIn/>}/>
+        <Route exact path='/admin' element={login !== true ? <LogIn/> : <SubirProductos/> }/>
 
         <Route exact path='/carrito/:_id' element={<Detail/>}/>
-
-        <Route exact path='/subirproducto' element={<SubirProductos/>}/>
 
         <Route exact path='/Pagado' element={<CompraEfectiva/>}/>
 

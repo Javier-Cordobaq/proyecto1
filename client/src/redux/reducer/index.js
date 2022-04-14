@@ -7,7 +7,8 @@ import {
   PAGADO,
   ADD_TO_CAR,
   DELETE_FROM_CAR,
-  GET_BY_ID
+  GET_BY_ID,
+  LOG_IN
 } from '../actions/index';
 
 const inicialState = { 
@@ -17,6 +18,7 @@ const inicialState = {
     mensaje: '',
     infocompra: '',
     carrito: [],
+    login: [],
     detail: []
 };
 
@@ -58,6 +60,12 @@ const rootReducer = (state = inicialState, action) => {
                 ...state,
                 mensaje: action.payload
             }
+
+        case LOG_IN:
+                return {
+                    ...state,
+                    login: action.payload
+                }
 
         case SET_MENSAJE:
                 return {

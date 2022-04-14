@@ -33,9 +33,11 @@ const Nav = () => {
   return (
     <div className={Style.contenedorSticky}>
         <div className={Style.contenedorGlobal}>
+                <Link to='/'>
                 <div className={Style.contenedorLogo}>
                     <img src={Logo} alt='Logo not Found'/>
                 </div>
+                </Link>
                 <div className={Style.contenedorDerecha}>
                   { ruta !== home ? 
 
@@ -90,9 +92,7 @@ const Nav = () => {
                           }
                             <div className={Style.comprar}>
                               <p>{`Subtotal: ${bandera.toFixed(2)}`}</p>
-                              <Link to='/formulariopedido'>
                               <button onClick={() => dispatch(pagado(productosCar))}>Comprar</button>
-                              </Link>
                             </div>
                             {infocompra !== '' ?
                               Swal.fire({
@@ -123,8 +123,7 @@ const Nav = () => {
                     <div className={Style.botones}>
                       
                         <a href='https://www.instagram.com/rangersnacks/?hl=es-la'><img src={face} height={20} alt='Not Found'/></a>
-                      
-                     
+          
                         <a href='https://www.instagram.com/rangersnacks/?hl=es-la'><img src={insta} height={20} alt='Not Found'/></a>
 
                         {idioma === 'español' ?
@@ -143,9 +142,11 @@ const Nav = () => {
 
               <div className={Style.menuGlobal}>
 
+              <Link to='/'>
                 <div className={Style.LogoResponsive}>
                         <img src={LogoCelular} alt='Logo not Found'/>
                 </div>
+              </Link>
 
                 {/* Este es un dic que envuelve las dos modales para celular */}
 
@@ -248,7 +249,7 @@ const Nav = () => {
                             }
                               <div className={Style.comprar}>
                                 <p>{`Subtotal: ${bandera.toFixed(2)}`}</p>
-                                <button onClick={() => dispatch(pagado())}>Comprar</button>
+                                <button onClick={() => dispatch(pagado(productosCar))}>Comprar</button>
                               </div>
                           </div> 
                   }

@@ -2,26 +2,30 @@ import React, { useState } from 'react'
 import style from '../LogIn/LogIn.module.css'
 import Logo from '../../Imagenes/LogoRangers.png'
 import TextField from '@material-ui/core/TextField';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logIn } from '../../redux/actions';
+import Swal from "sweetalert2";
 
 const LogIn = () => {
 
     const [state, setState] = useState({
-        usuario: '',
-        password: ''
+        email: "",
+        password: ""
     })
+
+    const login = useSelector(c => c.login)
+    console.log(login, 'Mensaje LogIn')
 
     const numeros = /^[A-Za-z]/;
 
     const [error, setError] = useState(false)
-    const [mensaje, setMensaje] = useState('')
+    const [mensajes, setMensaje] = useState('')
 
     const dispatch = useDispatch()
 
     const handleChange = (e) => {
         setState({...state, [e.target.name]: e.target.value})
-        if(state.usuario.match(numeros)){
-          console.log('Ta bienm')
+        if(state.email.match(numeros)){
           setError(false)
         } else {
             setError(true)
@@ -31,11 +35,21 @@ const LogIn = () => {
     
     const handleSumbit = (e) => {
         e.preventDefault();
-        /* dispatch(postProducts(state)) */
+        dispatch(logIn(state)) 
+        if(login !== true){
+            Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "Usuario incorrecto",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+        }
     }
 
   return (
     <div className={style.globalContainer}>
+        
         <div className={style.contCentrado}>
             <div className={style.contImage}>
                 <img src={Logo} alt='Not Found'/>
@@ -47,10 +61,10 @@ const LogIn = () => {
                     id="outlined-error-helper-text"
                     label="Usuario"
                     defaultValue="Hello World"
-                    helperText={`${error === true ? mensaje : 'Nombre de usuario'}`}
+                    helperText='Nombre de usuario'
                     variant="outlined"
-                    name='usuario'
-                    value={state.usuario}
+                    name='email'
+                    value={state.email}
                     onChange={handleChange}
                     fullWidth
                     />
