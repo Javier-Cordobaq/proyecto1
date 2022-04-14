@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
 import axios from 'axios';
-axios.defaults.baseURL = /* process.env.REACT_APP_URL || */ "http://localhost:9000/";
+axios.defaults.baseURL = process.env.REACT_APP_URL || "http://localhost:9000/";
 console.log(process.env.REACT_APP_URL)
 
 const root = createRoot(document.getElementById("root"));
