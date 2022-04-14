@@ -37,5 +37,22 @@ router.get('/', async (req, res) => {
   }
 })
 
+// enviar todos los usuarios que se registrarons
+router.get('/all', async (req, res) => {
+  try {
+    const allUsers = await Usuario.find()
+    const infoClean = allUsers.map(user => {
+      return {
+        name: user.name,
+        email: user.email,
+        date: user.date.toLocaleDateString('en-US')
+      }
+    })
+    res.json(infoClean)
+  } catch (err) {
+    res.json(err.message)
+  }
+})
+
 // exportar
 module.exports = router
