@@ -35,15 +35,6 @@ const LogIn = () => {
     const handleSumbit = (e) => {
         e.preventDefault();
         dispatch(logIn(state)) 
-        if(login !== true){
-            Swal.fire({
-                position: "center",
-                icon: "error",
-                title: "Usuario incorrecto",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-        }
     }
 
   return (

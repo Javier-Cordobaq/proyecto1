@@ -13,14 +13,6 @@ import { useSelector } from 'react-redux';
 function App() {
 
 const login = useSelector(c => c.login)
-console.log(login, 'App')
-
-  function fetchApi() {
-    fetch('http://localhost:3001/')
-      .then(response => response.json())
-      /* .then(data => console.log(data)) */
-  }
-  fetchApi()
 
   return (
     <div className="App">  
