@@ -9,8 +9,6 @@ import Swal from 'sweetalert2'
 
 const Detail = () => {
 
-  const [unidad, setUnidad] = useState(1)
-
   /* Variables carrito */
   const productosCar = useSelector(state => state.carrito)
   const infocompra = useSelector(state => state.infocompra)
@@ -58,7 +56,7 @@ const Detail = () => {
             <div className={style.contNav}>
 
             <Link to='/tienda'>
-              <div>
+              <div className={style.arrow}>
                 <span class="material-icons">
                 arrow_back_ios_new
                 </span>
@@ -134,12 +132,9 @@ const Detail = () => {
                 <h1>{detail.name}</h1>
                 <p className={style.descripcion}>{detail.detalle}</p>
                 <div className={style.contAñadir}>
-                  <input 
-                  type='number'
-                  onChange={(e) => {setUnidad(e.target.value)}}
-                  />
                   <button onClick={() => {agregarCarrito(detail)}}>Añadir al carrito</button>
-                  <p className={style.price}>$ {detail.price}</p>
+                  <p className={style.price}>x1 Unidad $ {detail.price}</p>
+                  {/* <p className={style.price}>$ {detail.price}</p> */}
                 </div>
                {/*  <p className={style.categoria}>{detail.type.name}</p> */}
             </div>

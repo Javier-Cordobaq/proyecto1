@@ -83,7 +83,8 @@
 }
 
 .contAñadir {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .contAñadir input {
@@ -99,6 +100,15 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+}
+
+.arrow span {
+    color: black;
+    transition: 0.3s all;
+}
+
+.arrow span:hover {
+    transform: scale(1.11);
 }
 
 /* Detail */
@@ -127,6 +137,7 @@
 }
 
 .carrito {
+    display: flex;
    position: relative; 
    margin-right: 1rem;
 }
@@ -240,6 +251,10 @@
         padding: 10px 18px;
         border-radius: 3px;
         transition: 0.3s all;
+        margin-bottom: 1rem;
+    }
+
+    .contAñadir {
         margin-bottom: 3rem;
     }
 
@@ -365,6 +380,10 @@
         padding: 10px 18px;
         border-radius: 3px;
         transition: 0.3s all;
+        margin-bottom: 1rem;
+    }
+
+    .contAñadir {
         margin-bottom: 3rem;
     }
 
