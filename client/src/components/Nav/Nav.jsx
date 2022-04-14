@@ -98,8 +98,9 @@ const Nav = () => {
                               Swal.fire({
                               position: 'center',
                               icon: 'success',
-                              title:'Cargando',
-                              confirmButtonText: `<a href=${infocompra}>Ir a paypal</a>`
+                              title:'Genial, empezemos con tu proceso de compra',
+                              footer: `<a href=${infocompra}>Ir a paypal</a>`,
+                              showConfirmButton: false,
                               })
                               :
                               null

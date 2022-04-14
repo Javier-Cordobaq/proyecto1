@@ -16,11 +16,12 @@ const dispath = useDispatch();
         <div>
             {infocompra !== '' ?
             Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title:'Cargando',
-            confirmButtonText: `<a href=${infocompra}>Ir a paypal</a>`
-            })
+              position: 'center',
+              icon: 'success',
+              title:'Genial, empezemos con tu proceso de compra',
+              footer: `<a href=${infocompra}>Ir a paypal</a>`,
+              showConfirmButton: false,
+              })
             :
             null
             }

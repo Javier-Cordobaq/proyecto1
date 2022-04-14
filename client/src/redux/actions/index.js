@@ -11,6 +11,7 @@ export const ADD_TO_CAR = 'ADD_TO_CAR'
 export const DELETE_FROM_CAR = 'DELETE_FROM_CAR'
 export const GET_BY_ID = 'GET_BY_ID'
 export const LOG_IN = 'LOG_IN'
+export const RESET = 'RESET'
 
 export const addToCar = (producto) => async dispatch => {
 
@@ -68,6 +69,12 @@ export const pagado = (orden) => async dispatch => {
     })
 
 }
+
+export const reset = () => dispatch => {
+    return dispatch({
+      type: RESET
+    })
+  }
 
 export const logIn = (usuario) => async dispatch => {
 

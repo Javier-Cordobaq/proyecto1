@@ -8,7 +8,8 @@ import {
   ADD_TO_CAR,
   DELETE_FROM_CAR,
   GET_BY_ID,
-  LOG_IN
+  LOG_IN,
+  RESET
 } from '../actions/index';
 
 const inicialState = { 
@@ -30,6 +31,12 @@ const rootReducer = (state = inicialState, action) => {
                 ...state,
                 detail: action.payload
             }
+
+        case RESET:
+                return {
+                    ...state,
+                    detail: []
+                }
 
         case DELETE_FROM_CAR:
             return {

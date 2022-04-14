@@ -14,7 +14,6 @@ const LogIn = () => {
     })
 
     const login = useSelector(c => c.login)
-    console.log(login, 'Mensaje LogIn')
 
     const numeros = /^[A-Za-z]/;
 

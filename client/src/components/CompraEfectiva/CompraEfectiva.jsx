@@ -5,13 +5,8 @@ const CompraEfectiva = () => {
   return (
     <div>
           {
-            Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title:'Cargando',
-            footer: `<a href='/'>Ir a paypal</a>`
-            })
-            }
+           
+          }
     </div>
   )
 }

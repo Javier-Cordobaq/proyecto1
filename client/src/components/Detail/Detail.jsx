@@ -3,7 +3,7 @@ import Nav from '../Nav/Nav'
 import style from '../Detail/Detail.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
-import { getById, addToCar, pagado } from '../../redux/actions'
+import { getById, addToCar, pagado, reset } from '../../redux/actions'
 import CardCarrito from '../CardCarrito/CardCarrito'
 import Swal from 'sweetalert2'
 
@@ -24,6 +24,7 @@ const Detail = () => {
 
     useEffect(() => {
         dispatch(getById(_id))
+        return () => {dispatch(reset())}
     }, [])
 
     const {_id} = useParams();
@@ -49,8 +50,8 @@ const Detail = () => {
         <div className={style.globalCont}> {/* Estilos contenido general */} 
 
             <div className={style.imagen}>
-                <img src={detail.image} alt='Not Found' />
-            </div>
+                <img src={detail.image} alt='' />
+            </div> 
 
             <div className={style.texto}>
 
@@ -114,12 +115,13 @@ const Detail = () => {
                                 <button onClick={() => dispatch(pagado(productosCar))}>Comprar</button>
                               </div>
                               {infocompra !== '' ?
-                                Swal.fire({
-                                position: 'center',
-                                icon: 'success',
-                                title:'Cargando',
-                                confirmButtonText: `<a href=${infocompra}>Ir a paypal</a>`
-                                })
+                                 Swal.fire({
+                                  position: 'center',
+                                  icon: 'success',
+                                  title:'Genial, empezemos con tu proceso de compra',
+                                  footer: `<a href=${infocompra}>Ir a paypal</a>`,
+                                  showConfirmButton: false,
+                                  })
                                 :
                                 null
                               }
