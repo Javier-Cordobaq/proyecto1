@@ -77,7 +77,8 @@ const rootReducer = (state = inicialState, action) => {
         case SET_MENSAJE:
                 return {
                 ...state,
-                mensaje: ''
+                mensaje: '',
+                login: []
             }
 
         case INGLES:

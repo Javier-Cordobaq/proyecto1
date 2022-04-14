@@ -6,10 +6,9 @@ const bcrypt = require('bcryptjs')
 async function verifyErrors (req, res, next) {
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() })
+    return res.json({ errors: errors.array() })
   }
   next()
-  return false
 }
 async function searchUser (req, res) {
   const { email, password } = req.body
@@ -18,11 +17,11 @@ async function searchUser (req, res) {
       email: email
     })
     if (!userDB) {
-      return res.status(400).send('false')
+      return res.send('false')
     } else {
       const validPassword = await bcrypt.compare(password, userDB.password)
       if (!validPassword) {
-        return res.status(400).send('false')
+        return res.send('false')
       } else {
         return res.send('true')
       }

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import style from '../LogIn/LogIn.module.css'
 import Logo from '../../Imagenes/LogoRangers.png'
 import TextField from '@material-ui/core/TextField';
 import { useDispatch, useSelector } from 'react-redux';
-import { logIn } from '../../redux/actions';
+import { logIn, setMensaje } from '../../redux/actions';
 import Swal from "sweetalert2";
 
 const LogIn = () => {
