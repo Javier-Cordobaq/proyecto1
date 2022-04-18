@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { getTipos, postProducts, setMensaje } from '../../redux/actions'; 
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2'
-
+import TablaUsuarios from '../TablaUsuariios/TablaUsuarios';
 /* Imports Material UI */
 
 import InputLabel from '@material-ui/core/InputLabel';
@@ -257,6 +257,10 @@ const tipo = tipos.filter((c) => {
 
 
         </form>
+        <div style={{width: '100%', height: '500px'}}>
+          <TablaUsuarios/>
+        </div>
+        
 
     </div>
   )

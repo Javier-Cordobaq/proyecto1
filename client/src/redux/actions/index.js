@@ -12,12 +12,19 @@ export const DELETE_FROM_CAR = 'DELETE_FROM_CAR'
 export const GET_BY_ID = 'GET_BY_ID'
 export const LOG_IN = 'LOG_IN'
 export const RESET = 'RESET'
-
+export const GET_ALL_USERS = 'GET_ALL_USERS'
 export const addToCar = (producto) => async dispatch => {
 
     dispatch({
         type: ADD_TO_CAR,
         payload: producto
+    })
+}
+export const getAllUsers = ()=> async dispatch =>{
+    const res = await axios.get('/Usuarios')
+    dispatch({
+        type: GET_ALL_USERS,
+        payload: res.data
     })
 }
 

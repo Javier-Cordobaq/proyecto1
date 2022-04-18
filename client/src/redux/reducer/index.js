@@ -1,4 +1,4 @@
-import { 
+import {
   INGLES,
   GET_PRODUCTS,
   GET_TIPOS,
@@ -9,99 +9,105 @@ import {
   DELETE_FROM_CAR,
   GET_BY_ID,
   LOG_IN,
-  RESET
-} from '../actions/index';
+  RESET,
+  GET_ALL_USERS,
+} from "../actions/index";
 
-const inicialState = { 
-    idioma: "español",
-    productos: [],
-    tipos: [],
-    mensaje: '',
-    infocompra: '',
-    carrito: [],
-    login: [],
-    detail: []
+const inicialState = {
+  idioma: "español",
+  productos: [],
+  tipos: [],
+  mensaje: "",
+  infocompra: "",
+  carrito: [],
+  login: [],
+  detail: [],
+  users:[],
 };
 
 const rootReducer = (state = inicialState, action) => {
-    switch (action.type) {
+  switch (action.type) {
+    case GET_BY_ID:
+      return {
+        ...state,
+        detail: action.payload,
+      };
 
-        case GET_BY_ID:
-            return {
-                ...state,
-                detail: action.payload
-            }
+    case RESET:
+      return {
+        ...state,
+        detail: [],
+      };
 
-        case RESET:
-                return {
-                    ...state,
-                    detail: []
-                }
+    case DELETE_FROM_CAR:
+      return {
+        ...state,
+        carrito: state.carrito.filter((c) => c._id !== action.payload),
+      };
 
-        case DELETE_FROM_CAR:
-            return {
-                ...state,
-                carrito: state.carrito.filter(c => c._id !== action.payload)
-            }
+    case ADD_TO_CAR:
+      return {
+        ...state,
+        carrito: !state.carrito.find((c) => c.name === action.payload.name)
+          ? [...state.carrito, action.payload]
+          : state.carrito.map((c) =>
+              c.name === action.payload.name
+                ? { ...c, cantidad: c.cantidad + 1 }
+                : c
+            ),
+      };
 
-        case ADD_TO_CAR:
-            return{
-                ...state,
-                carrito: !state.carrito.find(c=> c.name === action.payload.name)?
-                    [...state.carrito, action.payload]:
-                    state.carrito.map(c=> c.name === action.payload.name?
-                        {...c, cantidad: c.cantidad + 1}:
-                        c
-                    )
-            } 
-            
+    case PAGADO:
+      return {
+        ...state,
+        infocompra: action.payload,
+      };
 
-        case PAGADO:
-            return {
-                ...state,
-                infocompra: action.payload
-            }
+    case POST_PRODUCTS:
+      return {
+        ...state,
+        mensaje: action.payload,
+      };
 
-        case POST_PRODUCTS:
-            return {
-                ...state,
-                mensaje: action.payload
-            }
+    case LOG_IN:
+      return {
+        ...state,
+        login: action.payload,
+      };
 
-        case LOG_IN:
-                return {
-                    ...state,
-                    login: action.payload
-                }
+    case SET_MENSAJE:
+      return {
+        ...state,
+        mensaje: "",
+        login: [],
+      };
 
-        case SET_MENSAJE:
-                return {
-                ...state,
-                mensaje: '',
-                login: []
-            }
-
-        case INGLES:
-            return {
-                ...state,
-                idioma: state.idioma === 'español' ? 'ingles' : 'español'
-            }
-        case GET_PRODUCTS:
-            return {
-                ...state,
-                productos: action.payload
-            }
-        case GET_TIPOS:
-            return {
-                ...state,
-                tipos: action.payload
-            }
+    case INGLES:
+      return {
+        ...state,
+        idioma: state.idioma === "español" ? "ingles" : "español",
+      };
+    case GET_PRODUCTS:
+      return {
+        ...state,
+        productos: action.payload,
+      };
+    case GET_TIPOS:
+      return {
+        ...state,
+        tipos: action.payload,
+      };
+    case GET_ALL_USERS:
+        return {
+            ...state,
+            users: action.payload,
+        }
 
 
-        default:
-        return state
+    default:
+      return state;
 
-    }
-}
+  }
+};
 
 export default rootReducer;
