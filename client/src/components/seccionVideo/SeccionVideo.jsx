@@ -25,7 +25,7 @@ export default function SeccionVideo() {
                         }
                         </p>
                     </div>
-                    <a href='https://dumondesnacks.com/blog/'><button className={style.botonConocer}>{idioma === "español" ? "Conoce más de Bruss" : "Learn more about Bruss"}  <span class="material-icons-two-tone">arrow_forward</span></button></a>
+                    <a href='https://dumondesnacks.com/blog/' target="_blank"><button className={style.botonConocer}>{idioma === "español" ? "Conoce más de Bruss" : "Learn more about Bruss"}  <span class="material-icons-two-tone">arrow_forward</span></button></a>
                 </div>
                 <div className={style.video}>
                 <video loop autoPlay muted>

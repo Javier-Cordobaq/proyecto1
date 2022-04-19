@@ -123,9 +123,9 @@ const Nav = () => {
                 
                     <div className={Style.botones}>
                       
-                        <a href='https://www.instagram.com/rangersnacks/?hl=es-la'><img src={face} height={20} alt='Not Found'/></a>
+                        <a href='https://www.instagram.com/rangersnacks/?hl=es-la' target="_blank"><img src={face} height={20} alt='Not Found'/></a>
           
-                        <a href='https://www.instagram.com/rangersnacks/?hl=es-la'><img src={insta} height={20} alt='Not Found'/></a>
+                        <a href='https://www.instagram.com/rangersnacks/?hl=es-la' target="_blank"><img src={insta} height={20} alt='Not Found'/></a>
 
                         {idioma === 'español' ?
                         <button onClick={()=>{dispatch(cambiarIngles())}}>EN</button>
