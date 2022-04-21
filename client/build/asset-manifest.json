@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "./static/css/main.5de72c25.css",
-    "main.js": "./static/js/main.5c2804d7.js",
+    "main.js": "./static/js/main.172ceaf6.js",
     "static/js/787.b0807e75.chunk.js": "./static/js/787.b0807e75.chunk.js",
-    "static/media/cereal2.jpg": "./static/media/cereal2.c056622e03a5442c836a.jpg",
-    "static/media/cereal1.jpg": "./static/media/cereal1.7e26f8daa9de5ea37a54.jpg",
-    "static/media/cereal3.jpg": "./static/media/cereal3.8c6cedc0f860abf5cc8c.jpg",
+    "static/media/foto-circular1.png": "./static/media/foto-circular1.ba1ec2178d2f3aeccbe1.png",
+    "static/media/foto-circular2.png": "./static/media/foto-circular2.c9e96c0d7a72d4f10473.png",
+    "static/media/foto-circular3.png": "./static/media/foto-circular3.54a443599938aa8603e1.png",
     "static/media/videoProyecto.mp4": "./static/media/videoProyecto.23ee88085706f18e6284.mp4",
     "static/media/paqueHeader.png": "./static/media/paqueHeader.3b2276c668d9963dff6b.png",
-    "static/media/snack2.png": "./static/media/snack2.c49b5da2ce7c42bb280c.png",
-    "static/media/snack1.png": "./static/media/snack1.53a5c803c67dfb1a12bf.png",
-    "static/media/snack3.png": "./static/media/snack3.cee055e878f5ffbc860d.png",
     "static/media/Paquetes.webp": "./static/media/Paquetes.9ec1e102b45e304b0ce9.webp",
     "static/media/paquetesfooter.png": "./static/media/paquetesfooter.35a6fc0ab98d30189634.png",
     "static/media/TorrePalomitas.webp": "./static/media/TorrePalomitas.73d1432eddb9021d9fce.webp",
     "static/media/rings3.png": "./static/media/rings3.a7608821e5488057241b.png",
     "static/media/rings1.png": "./static/media/rings1.590a6ff561460be16747.png",
     "static/media/rings2.png": "./static/media/rings2.232272c8b890fffcf7d3.png",
+    "static/media/salt.png": "./static/media/salt.70cd37e22d20f8abe0e1.png",
+    "static/media/chesee.png": "./static/media/chesee.10ab31990948acce836a.png",
+    "static/media/salty.png": "./static/media/salty.8ea32e6e7bce1eb518c5.png",
     "static/media/3.png": "./static/media/3.d6607dc17fe7dde36cb2.png",
     "static/media/Rangers.png": "./static/media/Rangers.110e62b30aad90eb705c.png",
     "static/media/1.png": "./static/media/1.4ed5df7c91fd30ebfdb6.png",
@@ -26,11 +26,11 @@
     "static/media/instagram.svg": "./static/media/instagram.ae0283c0ac64a806d76bdc338f34d16c.svg",
     "static/media/facebook.svg": "./static/media/facebook.58c41f7a0b3533c0e5317e48ffcf871d.svg",
     "main.5de72c25.css.map": "./static/css/main.5de72c25.css.map",
-    "main.5c2804d7.js.map": "./static/js/main.5c2804d7.js.map",
+    "main.172ceaf6.js.map": "./static/js/main.172ceaf6.js.map",
     "787.b0807e75.chunk.js.map": "./static/js/787.b0807e75.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5de72c25.css",
-    "static/js/main.5c2804d7.js"
+    "static/js/main.172ceaf6.js"
   ]
 }

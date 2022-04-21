@@ -1,8 +1,8 @@
 import react from 'react';
 import style from './SeccionAmarilla.module.css'
-import cereal1 from '../../Imagenes/cereal1.jpg'
-import cereal2 from '../../Imagenes/cereal2.jpg'
-import cereal3 from '../../Imagenes/cereal3.jpg'
+import cereal1 from '../../Imagenes/foto-circular1.png'
+import cereal2 from '../../Imagenes/foto-circular2.png'
+import cereal3 from '../../Imagenes/foto-circular3.png'
 import { useSelector } from 'react-redux';
 export default function SeccionAmarilla() {
     const idioma = useSelector(state => state.idioma)
