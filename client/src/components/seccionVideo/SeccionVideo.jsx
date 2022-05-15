@@ -11,20 +11,14 @@ export default function SeccionVideo() {
     return (
         <div id='Bruss' className={style.container}>
             <div className={style.fondo}>
-                <img className={style.fondoImg} src={fondo} alt=''/>
                 <div className={style.burbuja}>
-                    <div>
-                        <img src={burbuja} alt=''/>
-                    </div>
-                        <div>
-                            <div className={style.title}>
-                                <img src={title} alt=''/>
-                            </div>
-                            <div className={style.desc}>
-                                <img src={desc} alt=''/>
-                            </div>
-                            <a href='https://dumondesnacks.com/blog/' target="_blank"><button>Conoce más de Bruss</button></a>
+                        <div className={style.title}>
+                            <img src={title} alt=''/>
                         </div>
+                        <div className={style.desc}>
+                            <img src={desc} alt=''/>
+                        </div>
+                        <a href='https://dumondesnacks.com/blog/' target="_blank"><button>Conoce más de Bruss</button></a>
                 </div>
             </div>
         </div>

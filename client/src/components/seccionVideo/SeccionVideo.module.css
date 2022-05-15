@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@600&display=swap');
+
 .container {
     min-height: 100vh;
     max-height: 100vh;
@@ -5,183 +7,112 @@
     overflow: hidden;
 }
 .fondo {
-    height: 100%;
-    width: 100%;
-    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../ImagenesNew/Ranger-Elementos-Web-11.webp');
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
 }
-.fondoImg {
-    object-fit: cover;
-    width: 100%;
+.burbuja {
+    background-image: url('../../ImagenesNew/Ranger_Elementos_Web-12.webp');
+    background-size: 90%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin-right: 3rem;
+}
+.burbuja button {
+    border: none;
+    background-color: #363652;
+    color: white;
+    font-size: 2vw;
+    padding: 5px 20px;
+    border-radius: 15px;
+    transition: 0.3s all;
+    font-family: 'Akshar', sans-serif;
+    margin-top: 1rem;
+}
+.burbuja button:hover {
+    cursor: pointer;
 }
 .title {
-    position: absolute;
-    top: 10%;
-    right: 23%;
+    width: 50%;
     height: auto;
-    width: 60%;
 }
 .title img {
     object-fit: cover;
     width: 100%;
 }
 .desc {
-    position: absolute;
-    top: 30%;
-    right: 18%;
+    width: 65%;
     height: auto;
-    width: 70%;
 }
 .desc img {
     object-fit: cover;
     width: 100%;
 }
-.burbuja {
-    position: absolute;
-    top: 5%;
-    right: 6%;
-    width: 45%;
-    height: 80%;
-}
-.burbuja img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-.burbuja button {
-    position: absolute;
-    right: 25%;
-    bottom: 13%;
-    border: none;
-    background-color: #363652;
-    color: white;
-    font-size: 2vw;
-    font-weight: bolder;
-    padding: 10px 20px;
-    border-radius: 10px;
-    transition: 0.3s all;
-}
-.burbuja button:hover {
-    cursor: pointer;
-    background-color: #2e2e45;
-}
 @media only screen and (max-width: 768px){ 
-    .container {
+    .fondo {
         height: 100vh;
-        width: 100%;
+        width: 100vw;
         background-image: url('../../ImagenesNew/Ranger-Elementos-Web-11.webp');
         background-size: cover;
-        background-position: 20% 0;
+        background-repeat: no-repeat;
+        background-position: 20%;
+        display: grid;
+        place-items: center;
+        justify-content: flex-end;
     }
-    .fondo {
-        height: 100%;
+    .burbuja {
+        background-image: url('../../ImagenesNew/Ranger_Elementos_Web-12.webp');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
         width: 100%;
+        height: 80%;
         position: relative;
+        margin-right: 0;
     }
-    .fondoImg {
-        display: none;
+    .burbuja button {
+        border: none;
+        background-color: #363652;
+        color: white;
+        font-size: 3vw;
+        padding: 5px 20px;
+        border-radius: 15px;
+        transition: 0.3s all;
+        font-family: 'Akshar', sans-serif;
+        margin-top: 1rem;
+    }
+    .burbuja button:hover {
+        cursor: pointer;
     }
     .title {
-        position: absolute;
-        top: 20%;
-        right: 23%;
-        height: auto;
         width: 60%;
+        height: auto;
     }
     .title img {
         object-fit: cover;
         width: 100%;
     }
     .desc {
-        position: absolute;
-        top: 45%;
-        right: 18%;
-        height: auto;
         width: 70%;
+        height: auto;
     }
     .desc img {
         object-fit: cover;
         width: 100%;
-    }
-    .burbuja {
-        position: relative;
-        top: 20%;
-        right: 0%;
-        width: 100%;
-        height: 50%;
-    }
-    .burbuja img {
-        object-fit: cover;
-        width: 100%;
-    }
-    .burbuja button {
-        position: absolute;
-        right: 28%;
-        bottom: -20%;
-        border: none;
-        background-color: #363652;
-        color: white;
-        font-size: 3vh;
-        font-weight: bolder;
-        padding: 10px 20px;
-        border-radius: 10px;
-        transition: 0.3s all;
-    }
-    .burbuja button:hover {
-        cursor: pointer;
-        background-color: #2e2e45;
     }
 }
 @media only screen and (max-width: 480px){ 
-    .title {
-        position: absolute;
-        top: 10%;
-        right: 23%;
-        height: auto;
-        width: 60%;
-    }
-    .title img {
-        object-fit: cover;
-        width: 100%;
-    }
-    .desc {
-        position: absolute;
-        top: 30%;
-        right: 18%;
-        height: auto;
-        width: 70%;
-    }
-    .desc img {
-        object-fit: cover;
-        width: 100%;
-    }
-    .burbuja {
-        position: relative;
-        top: 20%;
-        right: 0%;
-        width: 100%;
-        height: 50%;
-    }
-    .burbuja img {
-        object-fit: cover;
-        width: 100%;
-    }
-    .burbuja button {
-        position: absolute;
-        right: 27%;
-        bottom: 5%;
-        border: none;
-        background-color: #363652;
-        color: white;
-        font-size: 2vh;
-        font-weight: bolder;
-        padding: 10px 20px;
-        border-radius: 10px;
-        transition: 0.3s all;
-    }
-    .burbuja button:hover {
-        cursor: pointer;
-        background-color: #2e2e45;
-    }
+
 }
 /* .container{
     height: 100vh;
