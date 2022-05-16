@@ -32,7 +32,7 @@ const SeccionCarrusel = () => {
                 <Slider 
                 className={style.slider}
                 autoplay 
-                autoplaySpeed={4200}
+                autoplaySpeed={5000}
                 duration={300}
                 arrows={false}
                 centerPadding={10}

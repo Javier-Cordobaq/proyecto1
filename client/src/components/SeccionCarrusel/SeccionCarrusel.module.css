@@ -2,6 +2,7 @@
     width: 100%;
     text-align: center;
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(2,1fr);    
     height: 100%;
     align-items: center;
@@ -107,7 +108,7 @@
         width: 90%;
     }
     .globalContainer {
-        min-height: 100vh;
+        height: auto;
         display: flex;
         flex-direction: column;
         gap: 0;
@@ -115,7 +116,7 @@
     .imgCohete{
         width: 100%;
         position:relative;
-        top: -10%;
+        top: -2rem;
         left: -10px;
     }
     .item img {
@@ -130,14 +131,14 @@
         
     }
     .sliderContainer{
-
-        max-height: 100vh;
+        height: auto;
         width: 100%;
-        position: relative;
-        top: -500px;
+        position: static;
     }
     .fondoContainer{
-        height: 900px;
+        height: auto;
     }
-
+    .imgContainers{
+        height: auto;
+    }
 }

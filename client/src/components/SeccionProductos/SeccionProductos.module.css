@@ -32,17 +32,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    
-
 }
 .gridProductos{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     margin-top: 3%;
     gap: 3rem;
-    
-
 }
 
 .img{
@@ -87,13 +82,14 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-
 }
 
 .botton p {
     font-size: 30px;
     color:  #282847;
     font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .tablanutriocional p {
