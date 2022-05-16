@@ -5,6 +5,11 @@ import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { useSelector } from 'react-redux';
 import flecha from '../../Imagenes/flecha.png';
+import fondo from '../../Imagenes/subs.png'
+import title from '../../ImagenesNew/Ranger\ elementos1-02.png'
+import desc from '../../ImagenesNew/Ranger\ elementos1-03.png'
+import paquetes from '../../ImagenesNew/Ranger\ Elementos\ Web-23.png'
+
 const Suscribirse = () => {
   const idioma = useSelector((state) => state.idioma);
   const dispatch = useDispatch();
@@ -34,9 +39,18 @@ const Suscribirse = () => {
   return (
     <div className={style.globalContainer}>
       <div className={style.contTexto}>
+
         <div className={style.textos}>
-          
+
         </div>
+
+        <div className={style.fondo}><img src={fondo} alt=''/></div>
+
+        <div className={style.imagenes}>
+            <img src={title} alt=''/>
+            <img src={desc} alt=''/>
+        </div> 
+
         <form onSubmit={handleSumbit} className={style.inputs}>
           <input
             placeholder={idioma === "español" ? "Nombre" : "Name"}
@@ -59,9 +73,13 @@ const Suscribirse = () => {
             <img src={flecha} className={style.flecha} />
           </button>
         </form>
+
+        <div className={style.paquetes}>
+          <img src={paquetes} alt=''/>
+        </div> 
+
       </div>
 
-      <div className={style.paquetes}></div>
     </div>
   );
 };
