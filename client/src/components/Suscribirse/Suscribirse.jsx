@@ -70,7 +70,7 @@ const Suscribirse = () => {
 
           <button className={style.botonHeader}>
           {idioma === "español" ? "Suscribirse": "Subscribe"} 
-            <img src={flecha} className={style.flecha} />
+          <img src={flecha} className={style.flecha} />
           </button>
         </form>
 
