@@ -1,11 +1,11 @@
 .globalContainer {
-    height: auto;
     width: 100%;
-    margin: 0 0 5rem 0;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);    
+    height: 100%;
+    align-items: center;
+    padding-top: 5%;
 }
 
 .globalContainer h1 {
@@ -16,15 +16,13 @@
 
 .slider, .item {
     box-sizing: border-box;
-    margin-top: 2rem;
-    min-width: 100%;
-    height: 60vh;
-    padding: 0 1rem;
+    width: 400px;
+    height: 80vh;
 }
 
 .item img {
     object-fit: contain;
-    width: 100%;
+    width: 300px;
     height: 100%;
 }
 
@@ -39,3 +37,107 @@
 }
 */
 
+.fondoContainer{
+    background-color: var(--color-celeste);
+    min-height: 100vh;
+}
+.sliderContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../Imagenes/fondoSlider.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    align-items: center;
+    height: 70vh;
+
+}
+
+.imgTexto{
+    width: 70%;
+}
+.imgCohete{
+    width: 100%;
+    position:relative;
+    top: -20%;
+    left: -10px;
+}
+.imgContainers{
+    height: 87vh;
+}
+/* @media only screen and (min-width: 1280px){ 
+    .globalContainer {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+} */
+@media only screen and (max-width: 768px){ 
+    .globalContainer {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgTexto{
+        width: 90%;
+    }
+    .item img {
+        object-fit: contain;
+        width: 400px;
+        height: 100%;
+    }
+    .slider, .item {
+        box-sizing: border-box;
+        width: 600px;
+        height: 80vh;
+    }
+    .sliderContainer{
+
+        height: 100vh;
+        width: 100%;
+    
+    }
+}
+
+@media only screen and (max-width: 480px){ 
+    .imgTexto{
+        width: 90%;
+    }
+    .globalContainer {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .imgCohete{
+        width: 100%;
+        position:relative;
+        top: -10%;
+        left: -10px;
+    }
+    .item img {
+        object-fit: contain;
+        width: 300px;
+        height: 100%;
+    }
+    .slider, .item {
+        box-sizing: border-box;
+        width: 600px;
+        height: 80vh;
+        
+    }
+    .sliderContainer{
+
+        max-height: 100vh;
+        width: 100%;
+        position: relative;
+        top: -500px;
+    }
+    .fondoContainer{
+        height: 900px;
+    }
+
+}

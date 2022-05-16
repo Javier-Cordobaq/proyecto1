@@ -8,17 +8,25 @@
     padding: 1.5rem;
 }
 
-.title h1 {
-    margin: 2rem 0;
-    font-size: 5vh;
-}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+.title img {
+    width: 50%;
+
+}
 .container h1 {
     margin: 3rem 0;
     font-size: 3.5vh;
     
 }
-
+.imgTitulo{
+   width: 20%;
+   margin-top: 1%;
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -31,6 +39,8 @@
 .gridProductos{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    margin-top: 3%;
+    gap: 3rem;
     
 
 }
@@ -53,15 +63,15 @@
     width: 100%;
 }
 .comprar button {
-    background-color: var(--color-celeste);
+    background-color: #282847;
     border: none;
-    border-radius: 30px;
+    border-radius: 10px;
     padding: 10px 20px;
     font-weight: 500;    
     color: var(--color-blanco);
     font-size: 3vh;
     font-weight: bold;
-    margin-left: 1rem;
+    margin-top: 1rem;
     transition: 0.3s all ease-in-out;
 }
 
@@ -73,6 +83,7 @@
     width: 80%;
     height: 100px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
@@ -81,13 +92,25 @@
 
 .botton p {
     font-size: 30px;
+    color:  #282847;
+    font-weight: bold;
 }
 
 .tablanutriocional p {
     margin-top: 1rem;
-    font-size: 3vh;
+    font-size: 2.5vh;
+    font-weight: bold;
+    color: #282847;
 }
 @media (min-width: 480px) and (max-width: 768px){
+    .title img {
+        width: 90%;
+    
+    }
+    .imgTitulo{
+        width: 40%;
+        margin-top: 5%;
+     }
     .globaContainer{
         display: flex;
         
@@ -102,6 +125,14 @@
 }
 
 @media (max-width: 480px) {
+    .title img {
+        width: 100%;
+    
+    }
+    .imgTitulo{
+        width: 50%;
+        margin-top: 5%;
+     }
     .globaContainer {
         margin-bottom: 5rem;
         box-sizing: border-box;
@@ -130,62 +161,5 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-
-    .producto {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem;
-    }
-    
-    .img{
-        width: 70%;
-    }
-    
-    .comprar{
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    
-    }
-
-    .comprar button {
-        background-color: var(--color-celeste);
-        border: none;
-        border-radius: 30px;
-        padding: 10px 20px;
-        font-weight: 500;    
-        color: var(--color-blanco);
-        font-size: 2vh;
-        font-weight: bold;
-        margin-left: 1rem;
-        transition: 0.3s all ease-in-out;
-    }
-    
-    .comprar button:hover {
-        background-color: var(--color-azul);
-    }
-    
-    .botton {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 60px;
-        text-overflow: ellipsis;
-    }
-    
-    .botton p {
-        font-size: 2.5vh;
-        white-space: nowrap;
-        overflow: hidden;
-    }
-    
-    .tablanutriocional p {
-        margin-top: 0.5rem;
-        font-size: 2.5vh;
     }
 };

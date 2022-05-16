@@ -1,21 +1,34 @@
 .container{
     height: auto;
-    background-color: var(--color-amarillo);
+    background-color: var(--color-azul);
     width: 100%;
     box-sizing: border-box;
     padding: 3rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 4rem;
 }
 
-.logo {
-    width: 85%;
-    margin-bottom: 2rem;
-}
 
+.logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 .logo img{
     object-fit: cover;
     width: 100%;
+}
+.logo2 img{
+    object-fit: cover;
+    width: 100%;
+}
+.logo2{
+    width: 250px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .container p {
@@ -28,20 +41,31 @@
     padding: 0;
     margin-bottom: 1rem;
 }
-
+.navigation p{
+    font-size: 25px;
+    margin-right: 1rem;
+    color: var(--color-blanco);
+    font-weight: bold;
+}
 .rutas a {
     text-decoration: none;
-    color: black;
+    color: var(--color-blanco);
+    font-weight: bold;
     transition:  0.3s all;
 }
 
 .rutas a:hover {
-    color: var(--color-celeste);
+    color: var(--color-azul);
 }
 
 .socialMedia {
     width: 100%;
     margin-bottom: 1rem;
+    font-size: 25px;
+    margin-right: 1rem;
+    color: var(--color-blanco);
+    font-weight: bold;
+    display: block !important;
 }
 
 .redes {
@@ -49,6 +73,8 @@
     justify-content: flex-start;
     width: 100%;
     height: 2rem;
+    
+    
 }
 
 .redes a {
@@ -59,7 +85,7 @@
     width: 100%;
     height: 100%;
     filter: grayscale(100);
-    filter: brightness(0%);
+    filter: brightness(1000%);
     transition:  0.3s all;
 }
 
@@ -71,6 +97,7 @@
 .contacto {
     display: flex;
     flex-direction: column;
+    
 }
 
 .cont {
@@ -78,13 +105,22 @@
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
+    
 }
 
-.cont p {
-    margin: 0;
-}
 
+.contact p{
+    font-size: 20px;
+    margin-right: 1rem;
+    color: var(--color-blanco);
+    font-weight: bold;
+}
 .cont span {
     font-size: 35px;
     margin-right: 1rem;
+    color: var(--color-blanco);
+    font-weight: bold;
+}
+.containerTexto{
+    display: flex;
 }

@@ -8,8 +8,8 @@ import r2 from '../../Imagenes/rings2.png'
 import r3 from '../../Imagenes/rings3.png'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-
-
+import productosTitulo from '../../Imagenes/productosTitulo.png'
+import popsTitulo from '../../Imagenes/popsTitulo.png'
 export default function SeccionProductos(){
     const idioma = useSelector(state => state.idioma)
     const arraySnacks = [
@@ -45,10 +45,10 @@ export default function SeccionProductos(){
     return(
         <div id='productos' className={style.globaContainer}>
             <div className={style.title}>
-             <h1>{idioma === "español" ? "Los nuevos snacks favoritos de tu familia" : "Your family’s new favorite snack"}</h1>
+             <img src={productosTitulo} alt="" />
             </div>
             <div className={style.container}>
-                <h1>Ranger Pops</h1>
+                <img src={popsTitulo} className={style.imgTitulo} alt="" />
                 <div className={style.gridProductos}>
                     {
                         arraySnacks.map(snack => (
@@ -61,7 +61,7 @@ export default function SeccionProductos(){
                                         <Link to='/tienda'><button>{idioma === "español" ?"Comprar":"Buy"}</button></Link>
                                     </div>
                                     <div className={style.tablanutriocional}>
-                                        <p>{idioma === "español" ? "Ver tabla nutricional + 1" : "Show nutritional table +1"}</p>
+                                        <p>{idioma === "español" ? "Ver tabla nutricional" : "Show nutritional table +1"}</p>
                                     </div>
                                 </div>
                                 
@@ -74,7 +74,7 @@ export default function SeccionProductos(){
             </div>
 
             <div className={style.container}>
-                <h1>Ranger Rings</h1>
+                <img src={popsTitulo} className={style.imgTitulo} alt="" />
                 <div className={style.gridProductos}>
                 {
                 rings.map(snack => (
@@ -83,11 +83,11 @@ export default function SeccionProductos(){
                         <img className={style.img} src={snack.img} alt=""/>
                         <div className={style.comprar}>
                             <div className={style.botton}>
-                                <p>{snack.nombre}</p>
+                                <p className={style.name}>{snack.nombre}</p>
                                 <Link to='/tienda'><button>{idioma === "español" ?"Comprar":"Buy"}</button></Link>
                             </div>
                             <div className={style.tablanutriocional}>
-                            <p>{idioma === "español" ? "Ver tabla nutricional + 1" : "Show nutritional table +1"}</p>
+                            <p>{idioma === "español" ? "Ver tabla nutricional" : "Show nutritional table +1"}</p>
                             </div>
                         </div>
                         

@@ -4,7 +4,7 @@ import { postUsuarios } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { useSelector } from 'react-redux';
-
+import flecha from '../../Imagenes/flecha.png';
 const Suscribirse = () => {
   const idioma = useSelector((state) => state.idioma);
   const dispatch = useDispatch();
@@ -35,8 +35,7 @@ const Suscribirse = () => {
     <div className={style.globalContainer}>
       <div className={style.contTexto}>
         <div className={style.textos}>
-          <h1>{idioma === "español" ? "Inscribete en el Newsletter" : "Subscribe to our newsletter"}</h1>
-          <p>{idioma === "español" ? "Y recibe noticias de Ranger y Bruss directo a tu e-mail" : "Get the latest update on our products and Bruss’ adventures"}</p>
+          
         </div>
         <form onSubmit={handleSumbit} className={style.inputs}>
           <input
@@ -57,7 +56,7 @@ const Suscribirse = () => {
 
           <button className={style.botonHeader}>
           {idioma === "español" ? "Suscribirse": "Subscribe"} 
-            <span class="material-icons-two-tone">arrow_forward</span>
+            <img src={flecha} className={style.flecha} />
           </button>
         </form>
       </div>

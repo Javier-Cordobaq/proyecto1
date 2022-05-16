@@ -5,6 +5,8 @@ import style from './Footer.module.css'
 import face from '../../Imagenes/facebook.svg'
 import insta from '../../Imagenes/instagram.svg'
 import { Link } from 'react-router-dom'
+import Logo2 from '../../Imagenes/logo2.png'
+
 
 export default function Footer(){
 
@@ -15,6 +17,7 @@ export default function Footer(){
             <div className={style.logo}>
                 <img src={Logo} alt="" />
             </div>
+
                 <div className={style.navigation}>
                     <p>Navigation</p>
                     <ul className={style.rutas}>
@@ -45,6 +48,10 @@ export default function Footer(){
                     </div>
                 </div>
             </div>
+            <div className={style.logo2}>
+                <img src={Logo2} alt="" />
+            </div>
+
         </div>
     )
 }
