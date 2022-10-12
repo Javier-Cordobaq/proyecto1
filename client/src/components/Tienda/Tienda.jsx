@@ -74,7 +74,6 @@ const Tienda = () => {
 
   return (
   <div>
-
       <Nav/>
       <div className={style.globalContainer}>
         <div className={style.containerSticky}>

@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    padding: 1rem;
+    position: relative;
+}
+.button {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+    border-radius: 3rem;
+    border: none;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+.image_container {
+    width: 100%;
+    position: relative;
+}
+.image_container img {
+    object-fit: cover;
+    width: 100%;
+}
+.storie_container {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    color: black;
+    font-weight: 600;
+    font-size: 1em;
+}
+@media (min-width: 900px) {
+    
+}

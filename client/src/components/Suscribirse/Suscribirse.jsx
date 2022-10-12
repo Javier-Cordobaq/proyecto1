@@ -39,18 +39,16 @@ const Suscribirse = () => {
   return (
     <div className={style.globalContainer}>
       <div className={style.contTexto}>
-
         <div className={style.textos}>
 
         </div>
-
-        <div className={style.fondo}><img src={fondo} alt=''/></div>
-
+        <div className={style.fondo}>
+          <img src={fondo} alt='' />
+        </div>
         <div className={style.imagenes}>
-            <img src={title} alt=''/>
-            <img src={desc} alt=''/>
-        </div> 
-
+          <img src={title} alt='' />
+          <img src={desc} alt='' />
+        </div>
         <form onSubmit={handleSumbit} className={style.inputs}>
           <input
             placeholder={idioma === "español" ? "Nombre" : "Name"}
@@ -59,7 +57,6 @@ const Suscribirse = () => {
             name="name"
             onChange={handleChange}
           />
-
           <input
             placeholder={idioma === "español" ? "Correo" : "Email"}
             type="text"
@@ -67,16 +64,15 @@ const Suscribirse = () => {
             name="email"
             onChange={handleChange}
           />
-
           <button className={style.botonHeader}>
-          {idioma === "español" ? "Suscribirse": "Subscribe"} 
-          <img src={flecha} className={style.flecha} />
+            {idioma === "español" ? "Suscribirse" : "Subscribe"}
+            <img src={flecha} className={style.flecha} />
           </button>
         </form>
 
         <div className={style.paquetes}>
-          <img src={paquetes} alt=''/>
-        </div> 
+          <img src={paquetes} alt='' />
+        </div>
 
       </div>
 

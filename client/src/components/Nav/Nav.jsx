@@ -12,7 +12,7 @@ import Swal from 'sweetalert2'
 
 const Nav = () => {
 
-  const home = '/'
+  const tienda = '/tienda'
   const ruta = window.location.pathname
   const dispatch = useDispatch()
 
@@ -39,7 +39,7 @@ const Nav = () => {
                 </div>
                 </Link>
                 <div className={Style.contenedorDerecha}>
-                  { ruta !== home ? 
+                  { ruta === tienda ? 
 
                    <ul className={Style.rutas}>
                    <li><Link to='/'>Home</Link></li>
@@ -155,7 +155,7 @@ const Nav = () => {
 
                 {/* Aquí va la modal y logica del carrito del navBar cuando esta en modo celular */}
 
-                {ruta === home ? null : 
+                {ruta !== tienda ? null : 
                 <div className={Style.contenedirCheckBox}>        
                           <label>
                               <input 
@@ -209,7 +209,7 @@ const Nav = () => {
 
               {/*<div>*/}
                   {menu === false ? null : 
-                    ruta !== home ?
+                    ruta === tienda ?
                      <ul className={Style.rutasResponsive}>
                       <Link to='/'><li>Home</li></Link>
                       <Link to='/tienda'><li>{idioma === "español" ? "Tienda" : "Shop"}</li></Link>  

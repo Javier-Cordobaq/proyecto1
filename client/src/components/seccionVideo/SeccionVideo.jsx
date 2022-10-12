@@ -6,19 +6,22 @@ import fondo from '../../ImagenesNew/Ranger-Elementos-Web-11.webp'
 import title from '../../ImagenesNew/Ranger_Elementos_Web-13.webp'
 import desc from '../../ImagenesNew/Ranger_Elementos_Web-14.webp'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
+
 export default function SeccionVideo() {
+
     const idioma = useSelector(state => state.idioma)
     return (
         <div id='Bruss' className={style.container}>
             <div className={style.fondo}>
                 <div className={style.burbuja}>
-                        <div className={style.title}>
-                            <img src={title} alt=''/>
-                        </div>
-                        <div className={style.desc}>
-                            <img src={desc} alt=''/>
-                        </div>
-                        <a href='https://dumondesnacks.com/blog/' target="_blank"><button>Conoce más de Bruss</button></a>
+                    <div className={style.title}>
+                        <img src={title} alt='' />
+                    </div>
+                    <div className={style.desc}>
+                        <img src={desc} alt='' />
+                    </div>
+                    <Link to='/blog'><button>Conoce más de Bruss</button></Link>
                 </div>
             </div>
         </div>
