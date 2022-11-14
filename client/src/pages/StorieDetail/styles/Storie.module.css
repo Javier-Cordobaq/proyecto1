@@ -40,6 +40,13 @@
     font-weight: 600;
     font-size: 1em;
 }
+.title {
+    margin: 1.5rem 0;
+}
+.by {
+    color: black;
+    font-weight: 400;
+}
 @media (min-width: 900px) {
     
 }

@@ -6,6 +6,7 @@ import styles from './styles/StorieDetail.module.css'
 import Footer from '../../components/Footer/Footer'
 import Barquito from './components/Barquito'
 import Encogiendo from './components/Encogiendo'
+import Activity from './components/Activity'
 
 const StorieDetail = () => {
 
@@ -20,7 +21,8 @@ const StorieDetail = () => {
           Number(id) === 1 ? <Barquito /> :
             Number(id) === 2 ? <Encogiendo /> :
               Number(id) === 3 ? <Apagon /> :
-                Number(id) === 4 ? <UnTrabajo /> : null
+                Number(id) === 4 ? <UnTrabajo /> :
+                  Number(id) === 5 ? <Activity /> : null
         }
       </div>
       <Footer />

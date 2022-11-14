@@ -7,31 +7,35 @@ import encogiendo from '../../assets/encogiendo.webp'
 import barquito from '../../assets/barquito.webp'
 import actividad from '../../assets/actividad.webp'
 import ConoceABruss from './components/ConoceABruss'
+import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
 
-const blog = () => {
+const Blog = () => {
+
+    const idioma = useSelector(state => state.idioma)
 
     const stories = [
         {
             img: `${barquito}`,
-            title: 'UN BARQUITO ESPACIAL',
+            title: `${idioma === 'español' ? 'UN BARQUITO ESPACIAL' : 'A LITTLE SPACE SHIP'}`,
             date: 'Octubre 1, 2020',
             id: 1
         },
         {
             img: `${encogiendo}`,
-            title: 'MAMÁ, ME ESTOY ENCOGIENDO',
+            title: `${idioma === 'español' ? 'MAMÁ, ME ESTOY ENCOGIENDO' : `MOM, I'M SHRINKING`}`,
             date: 'Septiembre 28, 2020',
             id: 2
         },
         {
             img: `${apagon}`,
-            title: 'APAGÓN INTERGALACTICO',
+            title: `${idioma === 'español' ? 'APAGÓN INTERGALACTICO' : 'INTERGALACTIC BLACKOUT'}`,
             date: 'Mayo 4, 2020',
             id: 3
         },
         {
             img: `${trabajo}`,
-            title: 'UN TRABAJO PARA LOS RANGERS',
+            title: `${idioma === 'español' ? 'UN TRABAJO PARA LOS RANGERS' : 'A JOB FOR THE RANGERS'}`,
             date: 'Octubre 1, 2020',
             id: 4
         },
@@ -39,7 +43,7 @@ const blog = () => {
 
     const activity = {
         img: `${actividad}`,
-        title: 'UN BARQUITO ESPACIAL',
+        title: `${idioma === 'español' ? 'UN BARQUITO ESPACIAL' : 'A LITTLE SPACE SHIP'}`,
         date: 'Mayo 5, 2020',
         id: 5
     }
@@ -68,4 +72,4 @@ const blog = () => {
     )
 }
 
-export default blog
+export default Blog
