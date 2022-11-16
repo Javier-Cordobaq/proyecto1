@@ -43,15 +43,8 @@
     min-height: 100vh;
 }
 .sliderContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../../Imagenes/fondoSlider.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    align-items: center;
-    height: 70vh;
+    width: 70%;
+    height: 600px;
 
 }
 

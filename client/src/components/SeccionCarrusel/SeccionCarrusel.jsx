@@ -6,20 +6,9 @@ import imagen2 from '../../Imagenes/2.png'
 import imagen3 from '../../Imagenes/3.png'
 import sliderTexto from '../../Imagenes/sliderTexto.png'
 import sliderCohete from '../../Imagenes/sliderCohete.png'
+import Map from '../maps/Map';
 
 const SeccionCarrusel = () => {
-
-    const array = [
-        {
-            img: imagen1
-        },
-        {
-            img: imagen2
-        },
-        {
-            img: imagen3
-        }
-    ]
 
   return (
     <div className={style.fondoContainer}>
@@ -29,20 +18,7 @@ const SeccionCarrusel = () => {
                 <img className={style.imgCohete} src={sliderCohete} alt="" />
             </div>
             <div className={style.sliderContainer}>
-                <Slider 
-                className={style.slider}
-                autoplay 
-                autoplaySpeed={5000}
-                duration={300}
-                arrows={false}
-                centerPadding={10}
-                >
-
-                    {
-                    array.map(c => <div className={style.item}><img src={c.img} alt='' /></div>) 
-                    }
-                
-                </Slider>
+                <Map />
             </div>
             </div>
     </div>
