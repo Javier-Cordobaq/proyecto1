@@ -1,4 +1,3 @@
-import react from 'react';
 import style from './SeccionProductos.module.css';
 import snack1 from '../../Imagenes/salty.png'
 import snack2 from '../../Imagenes/salt.png'
@@ -94,13 +93,11 @@ export default function SeccionProductos() {
                                         <p>{idioma === "español" ? "Ver tabla nutricional" : "Show nutritional table +1"}</p>
                                     </div>
                                 </div>
-
-
                             </div>
                         ))
                     }
-
                 </div>
+
             </div>
         </div>
 
