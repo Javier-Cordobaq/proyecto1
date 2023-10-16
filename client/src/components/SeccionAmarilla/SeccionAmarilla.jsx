@@ -1,5 +1,10 @@
-import react from 'react';
 import style from './SeccionAmarilla.module.css'
+// Images English
+import TitleEnglish from '../../assets/English_Images/TitleEnglish.webp'
+import FirstPicture from '../../assets/English_Images/FirstPicture.webp'
+import SecondPicture from '../../assets/English_Images/SecondPicture.webp'
+import ThirdPicture from '../../assets/English_Images/ThirdPicture.webp'
+//Spanish Images
 import cereal1 from '../../ImagenesNew/Ranger-Elementos-Web-04.webp'
 import cereal2 from '../../ImagenesNew/Ranger-Elementos-Web-05.webp'
 import cereal3 from '../../ImagenesNew/Ranger-Elementos-Web-06.webp'
@@ -7,21 +12,23 @@ import text from '../../ImagenesNew/Ranger-Elementos-Web-07.webp'
 import { useSelector } from 'react-redux';
 
 export default function SeccionAmarilla() {
+
     const idioma = useSelector(state => state.idioma)
+
     return (
         <div className={style.seccionAmarilla}>
             <div className={style.contText}>
-                <img src={text} alt=''/>
+                <img src={`${idioma == 'español' ? text : TitleEnglish}`} alt='' />
             </div>
             <div className={style.contImagenes}>
                 <div className={style.cereales}>
-                    <img src={cereal1} alt=''/>
+                    <img src={`${idioma == 'español' ? cereal1 : FirstPicture}`} alt='' />
                 </div>
                 <div className={style.cereales}>
-                    <img src={cereal2} alt=''/>
+                    <img src={`${idioma == 'español' ? cereal2 : SecondPicture}`} />
                 </div>
                 <div className={style.cereales}>
-                    <img src={cereal3} alt=''/>
+                    <img src={`${idioma == 'español' ? cereal3 : ThirdPicture}`} />
                 </div>
             </div>
         </div>

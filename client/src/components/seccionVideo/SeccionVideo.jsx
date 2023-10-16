@@ -1,6 +1,8 @@
-import React from 'react';
+// English Images
+import BrussTitle from '../../assets/English_Images/BrussTitle.webp'
+import BrussDescription from '../../assets/English_Images/BrussDescription.webp'
+// Spnaish Images
 import style from './SeccionVideo.module.css'
-import video from '../../Imagenes/videoProyecto.mp4'
 import burbuja from '../../ImagenesNew/Ranger_Elementos_Web-12.webp'
 import fondo from '../../ImagenesNew/Ranger-Elementos-Web-11.webp'
 import title from '../../ImagenesNew/Ranger_Elementos_Web-13.webp'
@@ -16,12 +18,12 @@ export default function SeccionVideo() {
             <div className={style.fondo}>
                 <div className={style.burbuja}>
                     <div className={style.title}>
-                        <img src={title} alt='' />
+                        <img src={`${idioma == 'español' ? title : BrussTitle}`} alt='' />
                     </div>
                     <div className={style.desc}>
-                        <img src={desc} alt='' />
+                        <img src={`${idioma == 'español' ? desc : BrussDescription}`} alt='' />
                     </div>
-                    <Link to='/blog'><button>Conoce más de Bruss</button></Link>
+                    <Link to='/blog'><button>{`${idioma == 'español' ? 'Conoce más de Bruss' : 'Learn more about Bruss'}`}</button></Link>
                 </div>
             </div>
         </div>

@@ -1,4 +1,7 @@
-import React from 'react'
+// English Images
+import ProductDescriptionPC from '../../assets/English_Images/ProductDescriptionPC.webp'
+import ProductDescriptionMobile from '../../assets/English_Images/ProductDescriptionMobile.webp'
+// Spnaish Images
 import style from '../SeccionImagenes/SeccionImagenes.module.css'
 import Banner from '../../ImagenesNew/Ranger-Elementos-Web-08.webp'
 import texto from '../../ImagenesNew/Ranger-Elementos-Web-10.webp'
@@ -10,21 +13,21 @@ const SeccionImagenes = () => {
 
     const idioma = useSelector(state => state.idioma)
 
-  return (
+    return (
         <div className={style.contenedorHeader}>
             <div className={style.contWeb}>
-                    <img src={Banner} alt=''/>
+                <img src={`${idioma == 'español' ? Banner : ProductDescriptionPC}`} alt='' />
             </div>
             <div className={style.contMovil}>
                 <div className={style.contTexto}>
-                    <img src={texto} alt=''/>
+                    <img src={`${idioma == 'español' ? texto : ProductDescriptionMobile}`} alt='' />
                 </div>
                 <div className={style.contImagen}>
-                    <img src={imagen} alt=''/>
+                    <img src={imagen} alt='' />
                 </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default SeccionImagenes

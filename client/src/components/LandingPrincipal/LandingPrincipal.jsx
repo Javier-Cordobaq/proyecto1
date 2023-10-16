@@ -8,20 +8,20 @@ import SeccionProductos from '../SeccionProductos/SeccionProductos';
 import style from '../LandingPrincipal/LandingPrincipal.module.css'
 import Footer from '../Footer/Footer'
 import Suscribirse from '../Suscribirse/Suscribirse';
-import SeccionCarrusel from '../SeccionCarrusel/SeccionCarrusel';
+import SeccionMapa from '../SeccionMapa/SeccionMapa';
 
 const LandingPrincipal = () => {
   return (
     <div className={style.globalCont}>
-      <Nav/>
-      <div><Header/></div>
-      <div><SeccionAmarilla/></div>
-      <div><SeccionImagenes/></div>
-      <div><SeccionVideo/></div>
-      <SeccionCarrusel/>
-      <div><SeccionProductos/></div>
-      <div><Suscribirse/></div>
-      <div><Footer/></div>
+      <Nav />
+      <div><Header /></div>
+      <div><SeccionAmarilla /></div>
+      <div><SeccionImagenes /></div>
+      <div><SeccionVideo /></div>
+      <SeccionMapa />
+      <div><SeccionProductos /></div>
+      <div><Suscribirse /></div>
+      <div><Footer /></div>
     </div>
   )
 }

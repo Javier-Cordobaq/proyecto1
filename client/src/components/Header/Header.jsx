@@ -1,26 +1,31 @@
-import react from 'react';
 import style from './Header.module.css'
+//Imagenes Ingles 
+import BannerEnglish from '../../assets/English_Images/Header-English.webp'
+import TextMobile from '../../assets/English_Images/TextMobileEnglish.webp'
+// Imagenes Español
 import Banner from '../../ImagenesNew/Ranger-Elementos-Web_Mesa-de-trabajo-1.webp'
-import texto from '../../ImagenesNew/Ranger\ Elementos\ Web-02.webp'
-import imagen from '../../ImagenesNew/Ranger-Elementos-Web-03.webp'
+import TextoMobile from '../../ImagenesNew/Ranger\ Elementos\ Web-02.webp'
+import FotoMobile from '../../ImagenesNew/Ranger-Elementos-Web-03.webp'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
+
     const idioma = useSelector(state => state.idioma)
+
     return (
         <div id='acerca' className={style.contenedorHeader}>
             <div className={style.contWeb}>
-                    <img src={Banner} alt=''/>
-                    <Link to='/tienda'><button>COMPRAR</button></Link>
+                {idioma === 'español' ? <img src={Banner} alt='' /> : <img loading='lazy' src={BannerEnglish} alt='' />}
+                <Link to='/tienda'><button>COMPRAR</button></Link>
             </div>
             <div className={style.contMovil}>
                 <div className={style.contTexto}>
-                    <img src={texto} alt=''/>
+                    <img src={`${idioma === 'español' ? TextoMobile : TextMobile}`} alt='' />
                     <Link to='/tienda'><button>COMPRAR</button></Link>
                 </div>
                 <div className={style.contImagen}>
-                    <img src={imagen} alt=''/>
+                    <img src={FotoMobile} alt='' />
                 </div>
             </div>
         </div>
